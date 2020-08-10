@@ -14,7 +14,23 @@
                     <view key="view" contentMode="scaleToFill" id="acx-EW-S8N">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eeZ-99-2Q6">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="eeZ-99-2Q6" firstAttribute="centerX" secondItem="acx-EW-S8N" secondAttribute="centerX" id="1cn-JK-6as"/>
+                            <constraint firstItem="XTR-n8-Xs0" firstAttribute="trailing" secondItem="eeZ-99-2Q6" secondAttribute="trailing" id="KAr-cZ-QWA"/>
+                            <constraint firstItem="eeZ-99-2Q6" firstAttribute="leading" secondItem="XTR-n8-Xs0" secondAttribute="leading" id="sJy-ls-BGm"/>
+                            <constraint firstItem="eeZ-99-2Q6" firstAttribute="trailing" secondItem="XTR-n8-Xs0" secondAttribute="trailing" id="sqJ-Qa-cVb"/>
+                            <constraint firstItem="eeZ-99-2Q6" firstAttribute="top" secondItem="acx-EW-S8N" secondAttribute="top" id="tsl-JW-fx9"/>
+                            <constraint firstItem="eeZ-99-2Q6" firstAttribute="leading" secondItem="XTR-n8-Xs0" secondAttribute="leading" id="vfg-o8-LLX"/>
+                            <constraint firstItem="eeZ-99-2Q6" firstAttribute="centerY" secondItem="acx-EW-S8N" secondAttribute="centerY" id="vjo-kj-OGX"/>
+                            <constraint firstAttribute="bottom" secondItem="eeZ-99-2Q6" secondAttribute="bottom" id="x1R-YT-xrh"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="XTR-n8-Xs0"/>
                     </view>
                     <navigationItem key="navigationItem" title="Record Session" id="6h2-18-nT4"/>
