@@ -3,29 +3,41 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		A16AB16D24E19A4700742AFF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A16AB16C24E19A4700742AFF /* AppDelegate.swift */; };
 		A16AB16F24E19A4700742AFF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A16AB16E24E19A4700742AFF /* SceneDelegate.swift */; };
-		A16AB17124E19A4700742AFF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A16AB17024E19A4700742AFF /* ViewController.swift */; };
-		A16AB17424E19A4700742AFF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A16AB17224E19A4700742AFF /* Main.storyboard */; };
 		A16AB17724E19A4700742AFF /* NYU_Mobility_2.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A16AB17524E19A4700742AFF /* NYU_Mobility_2.xcdatamodeld */; };
 		A16AB17924E19A4800742AFF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A16AB17824E19A4800742AFF /* Assets.xcassets */; };
 		A16AB17C24E19A4800742AFF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A16AB17A24E19A4800742AFF /* LaunchScreen.storyboard */; };
+		A16AB18A24E19C1400742AFF /* Registration.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A16AB18924E19C1400742AFF /* Registration.storyboard */; };
+		A16AB18F24E19D4100742AFF /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = A16AB18E24E19D4100742AFF /* Colors.swift */; };
+		A16AB19324E19F3B00742AFF /* GreetingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A16AB19224E19F3B00742AFF /* GreetingController.swift */; };
+		A16AB19524E1A28000742AFF /* Tracking.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A16AB19424E1A28000742AFF /* Tracking.storyboard */; };
+		A17DEB2524E1B5EA0026F3F9 /* BubbleTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = A17DEB2424E1B5EA0026F3F9 /* BubbleTextField.swift */; };
+		A17DEB2724E1B5FA0026F3F9 /* BubbleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A17DEB2624E1B5FA0026F3F9 /* BubbleButton.swift */; };
+		E88A02C01A2142CB7595762A /* Pods_NYU_Mobility_2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD5F394082FE5633924CD555 /* Pods_NYU_Mobility_2.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		79DB4DA839AF4EC748F6222B /* Pods-NYU Mobility 2.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NYU Mobility 2.debug.xcconfig"; path = "Target Support Files/Pods-NYU Mobility 2/Pods-NYU Mobility 2.debug.xcconfig"; sourceTree = "<group>"; };
 		A16AB16924E19A4700742AFF /* NYU Mobility 2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "NYU Mobility 2.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A16AB16C24E19A4700742AFF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A16AB16E24E19A4700742AFF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		A16AB17024E19A4700742AFF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		A16AB17324E19A4700742AFF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A16AB17624E19A4700742AFF /* NYU_Mobility_2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = NYU_Mobility_2.xcdatamodel; sourceTree = "<group>"; };
 		A16AB17824E19A4800742AFF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A16AB17B24E19A4800742AFF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A16AB17D24E19A4800742AFF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A16AB18924E19C1400742AFF /* Registration.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Registration.storyboard; sourceTree = "<group>"; };
+		A16AB18E24E19D4100742AFF /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		A16AB19224E19F3B00742AFF /* GreetingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GreetingController.swift; sourceTree = "<group>"; };
+		A16AB19424E1A28000742AFF /* Tracking.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Tracking.storyboard; sourceTree = "<group>"; };
+		A17DEB2424E1B5EA0026F3F9 /* BubbleTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BubbleTextField.swift; sourceTree = "<group>"; };
+		A17DEB2624E1B5FA0026F3F9 /* BubbleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BubbleButton.swift; sourceTree = "<group>"; };
+		AD5F394082FE5633924CD555 /* Pods_NYU_Mobility_2.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NYU_Mobility_2.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F0DC4E0BF772A7ECAB79A9E9 /* Pods-NYU Mobility 2.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NYU Mobility 2.release.xcconfig"; path = "Target Support Files/Pods-NYU Mobility 2/Pods-NYU Mobility 2.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,17 +45,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E88A02C01A2142CB7595762A /* Pods_NYU_Mobility_2.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4A560348846DE6FAAC648AB7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				AD5F394082FE5633924CD555 /* Pods_NYU_Mobility_2.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		516F89E5DE0C23109B98EABF /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				79DB4DA839AF4EC748F6222B /* Pods-NYU Mobility 2.debug.xcconfig */,
+				F0DC4E0BF772A7ECAB79A9E9 /* Pods-NYU Mobility 2.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		A16AB16024E19A4700742AFF = {
 			isa = PBXGroup;
 			children = (
 				A16AB16B24E19A4700742AFF /* NYU Mobility 2 */,
 				A16AB16A24E19A4700742AFF /* Products */,
+				516F89E5DE0C23109B98EABF /* Pods */,
+				4A560348846DE6FAAC648AB7 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -58,16 +90,76 @@
 		A16AB16B24E19A4700742AFF /* NYU Mobility 2 */ = {
 			isa = PBXGroup;
 			children = (
-				A16AB16C24E19A4700742AFF /* AppDelegate.swift */,
-				A16AB16E24E19A4700742AFF /* SceneDelegate.swift */,
-				A16AB17024E19A4700742AFF /* ViewController.swift */,
-				A16AB17224E19A4700742AFF /* Main.storyboard */,
-				A16AB17824E19A4800742AFF /* Assets.xcassets */,
-				A16AB17A24E19A4800742AFF /* LaunchScreen.storyboard */,
+				A16AB18D24E19D3300742AFF /* UI */,
+				A16AB18624E19AF000742AFF /* Models */,
+				A16AB18424E19ABD00742AFF /* Resources */,
+				A16AB18324E19AB500742AFF /* Views */,
 				A16AB17D24E19A4800742AFF /* Info.plist */,
-				A16AB17524E19A4700742AFF /* NYU_Mobility_2.xcdatamodeld */,
 			);
 			path = "NYU Mobility 2";
+			sourceTree = "<group>";
+		};
+		A16AB18324E19AB500742AFF /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				A16AB19124E19EF400742AFF /* Tracking Controllers */,
+				A16AB19024E19EE000742AFF /* Registration Controllers */,
+				A16AB18824E19B3100742AFF /* Storyboards */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		A16AB18424E19ABD00742AFF /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				A16AB17824E19A4800742AFF /* Assets.xcassets */,
+				A16AB16C24E19A4700742AFF /* AppDelegate.swift */,
+				A16AB16E24E19A4700742AFF /* SceneDelegate.swift */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		A16AB18624E19AF000742AFF /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				A16AB17524E19A4700742AFF /* NYU_Mobility_2.xcdatamodeld */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		A16AB18824E19B3100742AFF /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				A16AB17A24E19A4800742AFF /* LaunchScreen.storyboard */,
+				A16AB18924E19C1400742AFF /* Registration.storyboard */,
+				A16AB19424E1A28000742AFF /* Tracking.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		A16AB18D24E19D3300742AFF /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				A16AB18E24E19D4100742AFF /* Colors.swift */,
+				A17DEB2424E1B5EA0026F3F9 /* BubbleTextField.swift */,
+				A17DEB2624E1B5FA0026F3F9 /* BubbleButton.swift */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		A16AB19024E19EE000742AFF /* Registration Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				A16AB19224E19F3B00742AFF /* GreetingController.swift */,
+			);
+			path = "Registration Controllers";
+			sourceTree = "<group>";
+		};
+		A16AB19124E19EF400742AFF /* Tracking Controllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Tracking Controllers";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -77,9 +169,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A16AB18024E19A4800742AFF /* Build configuration list for PBXNativeTarget "NYU Mobility 2" */;
 			buildPhases = (
+				89A32D02504EBDE7DD44BB99 /* [CP] Check Pods Manifest.lock */,
 				A16AB16524E19A4700742AFF /* Sources */,
 				A16AB16624E19A4700742AFF /* Frameworks */,
 				A16AB16724E19A4700742AFF /* Resources */,
+				C092999D4ABC413CE2F12A8A /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -129,12 +223,55 @@
 			buildActionMask = 2147483647;
 			files = (
 				A16AB17C24E19A4800742AFF /* LaunchScreen.storyboard in Resources */,
+				A16AB19524E1A28000742AFF /* Tracking.storyboard in Resources */,
+				A16AB18A24E19C1400742AFF /* Registration.storyboard in Resources */,
 				A16AB17924E19A4800742AFF /* Assets.xcassets in Resources */,
-				A16AB17424E19A4700742AFF /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		89A32D02504EBDE7DD44BB99 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-NYU Mobility 2-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C092999D4ABC413CE2F12A8A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-NYU Mobility 2/Pods-NYU Mobility 2-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-NYU Mobility 2/Pods-NYU Mobility 2-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-NYU Mobility 2/Pods-NYU Mobility 2-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		A16AB16524E19A4700742AFF /* Sources */ = {
@@ -142,8 +279,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				A16AB17724E19A4700742AFF /* NYU_Mobility_2.xcdatamodeld in Sources */,
-				A16AB17124E19A4700742AFF /* ViewController.swift in Sources */,
+				A17DEB2524E1B5EA0026F3F9 /* BubbleTextField.swift in Sources */,
+				A16AB18F24E19D4100742AFF /* Colors.swift in Sources */,
 				A16AB16D24E19A4700742AFF /* AppDelegate.swift in Sources */,
+				A17DEB2724E1B5FA0026F3F9 /* BubbleButton.swift in Sources */,
+				A16AB19324E19F3B00742AFF /* GreetingController.swift in Sources */,
 				A16AB16F24E19A4700742AFF /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -151,14 +291,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		A16AB17224E19A4700742AFF /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				A16AB17324E19A4700742AFF /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		A16AB17A24E19A4800742AFF /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -286,6 +418,7 @@
 		};
 		A16AB18124E19A4800742AFF /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 79DB4DA839AF4EC748F6222B /* Pods-NYU Mobility 2.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -298,12 +431,13 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "jin-kim-test.NYU-Mobility-2";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
 		A16AB18224E19A4800742AFF /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F0DC4E0BF772A7ECAB79A9E9 /* Pods-NYU Mobility 2.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -316,7 +450,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "jin-kim-test.NYU-Mobility-2";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

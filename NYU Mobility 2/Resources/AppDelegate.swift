@@ -12,10 +12,25 @@ import CoreData
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-
+    var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        
+        // Won't turn off by itself
+        application.isIdleTimerDisabled = true
+        
+        // Override point for customization after application launch
+        let defaults = UserDefaults.standard
+        /*
+         VARIABLE USES:
+         name: Client / Specialist name
+         email: specialist's email - clients put their specialist's email to send data
+         password - to be hooked with database
+         */
+        let defaultValue = ["name": "", "email" : "",
+                            "password": "", "code": ""] as [String : Any]
+        defaults.register(defaults: defaultValue)
+        
         return true
     }
 

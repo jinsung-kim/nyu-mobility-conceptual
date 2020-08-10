@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ILq-hv-t8L">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Registration-->
+        <scene sceneID="I7f-lq-Sle">
+            <objects>
+                <viewController title="Registration" id="FKW-6r-Cuk" customClass="GreetingController" customModule="NYU_Mobility_2" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="4Ud-qJ-CID">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="4tU-fb-Le5">
+                                <rect key="frame" x="127.5" y="74" width="120" height="120"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="120" id="6SW-jw-mhS"/>
+                                    <constraint firstAttribute="width" constant="120" id="IWP-KN-emL"/>
+                                </constraints>
+                            </imageView>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lFP-kI-0qa" customClass="BubbleTextField" customModule="NYU_Mobility_2" customModuleProvider="target">
+                                <rect key="frame" x="171.5" y="248" width="32" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="keyboardStays:" destination="FKW-6r-Cuk" eventType="editingDidBegin" id="ZvL-FA-JKY"/>
+                                </connections>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ymn-ps-dU2" customClass="BubbleTextField" customModule="NYU_Mobility_2" customModuleProvider="target">
+                                <rect key="frame" x="171.5" y="326" width="32" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                <connections>
+                                    <action selector="keyboardStays:" destination="FKW-6r-Cuk" eventType="editingDidBegin" id="ge6-TY-oh2"/>
+                                </connections>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fV1-TJ-2fr" customClass="BubbleButton" customModule="NYU_Mobility_2" customModuleProvider="target">
+                                <rect key="frame" x="168.5" y="507" width="38" height="30"/>
+                                <state key="normal" title="Login"/>
+                                <connections>
+                                    <action selector="loginSubmitted:" destination="FKW-6r-Cuk" eventType="touchUpInside" id="1Pd-Xz-aoT"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9yS-p5-7EU" customClass="BubbleButton" customModule="NYU_Mobility_2" customModuleProvider="target">
+                                <rect key="frame" x="132" y="587" width="111" height="30"/>
+                                <state key="normal" title="Register Instead"/>
+                                <connections>
+                                    <segue destination="X80-SA-dQW" kind="show" id="Sma-BD-t2A"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Password" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B1r-MQ-gFz">
+                                <rect key="frame" x="150.5" y="297" width="74" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IIz-h9-62T">
+                                <rect key="frame" x="167" y="219" width="41" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="fV1-TJ-2fr" firstAttribute="centerX" secondItem="4Ud-qJ-CID" secondAttribute="centerX" id="1ii-ZU-GU5"/>
+                            <constraint firstItem="9yS-p5-7EU" firstAttribute="centerX" secondItem="4Ud-qJ-CID" secondAttribute="centerX" id="2q4-g1-4iB"/>
+                            <constraint firstItem="4tU-fb-Le5" firstAttribute="top" secondItem="W4m-uT-Cx3" secondAttribute="top" constant="30" id="9PY-yF-Spr" customClass="NSLayoutHelper" customModule="LayoutHelper">
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="iPhoneSE">
+                                        <real key="value" value="30"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="iPhone8">
+                                        <real key="value" value="50"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="iPhone8Plus">
+                                        <real key="value" value="50"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="iPhoneXS">
+                                        <real key="value" value="60"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="iPhoneXR">
+                                        <real key="value" value="70"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="iPhoneXMax">
+                                        <real key="value" value="70"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </constraint>
+                            <constraint firstItem="IIz-h9-62T" firstAttribute="top" secondItem="4tU-fb-Le5" secondAttribute="bottom" constant="25" id="ADf-A5-SEy" customClass="NSLayoutHelper" customModule="LayoutHelper">
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="iPhoneSE">
+                                        <real key="value" value="25"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="iPhone8">
+                                        <real key="value" value="35"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="iPhone8Plus">
+                                        <real key="value" value="40"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="iPhoneXR">
+                                        <real key="value" value="50"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="iPhoneXS">
+                                        <real key="value" value="50"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="iPhoneXMax">
+                                        <real key="value" value="50"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </constraint>
+                            <constraint firstItem="4tU-fb-Le5" firstAttribute="centerX" secondItem="4Ud-qJ-CID" secondAttribute="centerX" id="CdA-xe-ltQ"/>
+                            <constraint firstItem="ymn-ps-dU2" firstAttribute="top" secondItem="B1r-MQ-gFz" secondAttribute="bottom" constant="8" id="EFg-2g-ek6"/>
+                            <constraint firstItem="B1r-MQ-gFz" firstAttribute="top" secondItem="lFP-kI-0qa" secondAttribute="bottom" constant="15" id="H2V-X3-cb7"/>
+                            <constraint firstItem="ymn-ps-dU2" firstAttribute="centerX" secondItem="4Ud-qJ-CID" secondAttribute="centerX" id="J1h-xa-WWz"/>
+                            <constraint firstItem="B1r-MQ-gFz" firstAttribute="centerX" secondItem="4Ud-qJ-CID" secondAttribute="centerX" id="N6D-qt-as4"/>
+                            <constraint firstItem="9yS-p5-7EU" firstAttribute="top" secondItem="fV1-TJ-2fr" secondAttribute="bottom" constant="50" id="Nfn-pa-FsI" customClass="NSLayoutHelper" customModule="LayoutHelper">
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="iPhoneSE">
+                                        <real key="value" value="15"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="iPhone8">
+                                        <real key="value" value="50"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="iPhone8Plus">
+                                        <real key="value" value="60"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="iPhoneXS">
+                                        <real key="value" value="70"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="iPhoneXR">
+                                        <real key="value" value="70"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="iPhoneXMax">
+                                        <real key="value" value="70"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </constraint>
+                            <constraint firstItem="lFP-kI-0qa" firstAttribute="centerX" secondItem="4Ud-qJ-CID" secondAttribute="centerX" id="d1o-Zm-Wgg"/>
+                            <constraint firstItem="lFP-kI-0qa" firstAttribute="top" secondItem="IIz-h9-62T" secondAttribute="bottom" constant="8" id="gIM-Za-Gbg"/>
+                            <constraint firstItem="IIz-h9-62T" firstAttribute="centerX" secondItem="4Ud-qJ-CID" secondAttribute="centerX" id="giS-eN-Tp8"/>
+                            <constraint firstItem="W4m-uT-Cx3" firstAttribute="bottom" secondItem="9yS-p5-7EU" secondAttribute="bottom" constant="50" id="zU2-ua-ftF" customClass="NSLayoutHelper" customModule="LayoutHelper">
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="iPhoneSE">
+                                        <real key="value" value="30"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="iPhone8">
+                                        <real key="value" value="40"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="iPhone8Plus">
+                                        <real key="value" value="60"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="iPhoneXS">
+                                        <real key="value" value="90"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="iPhoneXR">
+                                        <real key="value" value="90"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="iPhoneXMax">
+                                        <real key="value" value="90"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </constraint>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="W4m-uT-Cx3"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Log In" id="Emp-dG-epB"/>
+                    <connections>
+                        <outlet property="email" destination="lFP-kI-0qa" id="Fex-gp-9kC"/>
+                        <outlet property="loginButton" destination="fV1-TJ-2fr" id="RCu-oI-h8M"/>
+                        <outlet property="password" destination="ymn-ps-dU2" id="AgG-yO-b4C"/>
+                        <outlet property="registerButton" destination="9yS-p5-7EU" id="is1-ty-32e"/>
+                        <segue destination="XsS-hg-MC1" kind="show" identifier="ToTracking" id="cAi-H9-phW"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fqo-ZH-RKP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="928.125" y="148.94366197183098"/>
+        </scene>
+        <!--TrackingController-->
+        <scene sceneID="eb4-8e-DO1">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="MainTracking" storyboardName="Tracking" referencedIdentifier="TrackingController" id="XsS-hg-MC1" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="FTK-pY-Ake"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0JA-kR-V9L" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2058" y="149"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="gwu-NJ-5u2">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ILq-hv-t8L" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ZE9-Mg-2zr">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="FKW-6r-Cuk" kind="relationship" relationship="rootViewController" id="e2E-9m-veC"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3kQ-ga-yUw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-69.375" y="148.94366197183098"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="MuL-fS-Dil">
+            <objects>
+                <viewController id="X80-SA-dQW" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5QL-4I-zFg">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="5gZ-gE-DCJ"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="neE-3C-TMG"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xWR-9m-PHd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="928" y="991"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="logo" width="120" height="120"/>
+    </resources>
+</document>
