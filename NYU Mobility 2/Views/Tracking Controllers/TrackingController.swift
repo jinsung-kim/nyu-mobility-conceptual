@@ -10,7 +10,6 @@ import UIKit
 import AVKit
 import AVFoundation
 import CoreLocation
-import CoreData
 import CoreMotion
 
 class TrackingController: UIViewController, AVCaptureFileOutputRecordingDelegate, CLLocationManagerDelegate {
@@ -18,6 +17,7 @@ class TrackingController: UIViewController, AVCaptureFileOutputRecordingDelegate
     @IBOutlet weak var camPreview: UIView!
     
     @IBOutlet weak var cameraButton: UIView!
+    
     let captureSession = AVCaptureSession()
     let movieOutput = AVCaptureMovieFileOutput()
     
@@ -28,7 +28,7 @@ class TrackingController: UIViewController, AVCaptureFileOutputRecordingDelegate
     
     // Movement tracking managers (copied from SpecialistTrackingController.swift
     
-    var name: String?
+    var name: String! = "Jin"
     
     // Used to track pedometer when saving data
     private var steps: Int32 = 0
@@ -44,8 +44,6 @@ class TrackingController: UIViewController, AVCaptureFileOutputRecordingDelegate
     
     // Used for creating the JSON
     var points: [Point] = []
-    
-    var sessions: [NSManagedObject] = []
     
     // Pedometer object - used to trace each step
     private let activityManager: CMMotionActivityManager = CMMotionActivityManager()
@@ -69,8 +67,6 @@ class TrackingController: UIViewController, AVCaptureFileOutputRecordingDelegate
         
         // Instructions Page Redirect setup
         instructionButton()
-        
-        loadData()
         getLocationPermission()
         
         if (setupSession()) {
@@ -190,10 +186,10 @@ class TrackingController: UIViewController, AVCaptureFileOutputRecordingDelegate
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        if (segue.identifier == "showVideo") { // going to video playback controller
-//            let vc = segue.destination as! VideoPlaybackController
-//            vc.session = sessions[sessions.count - 1]
-//        }
+        if (segue.identifier == "ShowVideo") {
+            let vc = segue.destination as! PlaybackController
+            vc.videoURL = outputURL
+        }
     }
     
     func startRecording() {
@@ -252,25 +248,7 @@ class TrackingController: UIViewController, AVCaptureFileOutputRecordingDelegate
         if (error != nil) {
             print("Error recording movie: \(error!.localizedDescription)")
         } else {
-            performSegue(withIdentifier: "showVideo", sender: outputURL!)
-        }
-    }
-    
-    // Movement tracking controller functions
-    
-    func loadData() {
-        guard let appDelegate =
-            UIApplication.shared.delegate as? AppDelegate else {
-            return
-        }
-        
-        let managedContext = appDelegate.persistentContainer.viewContext
-        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "Session")
-        
-        do {
-            sessions = try managedContext.fetch(fetchRequest)
-        } catch let error as NSError {
-            print("Could not fetch. \(error), \(error.userInfo)")
+            performSegue(withIdentifier: "ShowVideo", sender: outputURL!)
         }
     }
     
@@ -417,40 +395,16 @@ class TrackingController: UIViewController, AVCaptureFileOutputRecordingDelegate
     
     // Saves Point
     func saveSession() {
-        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
-            return
-        }
-
-        let managedContext = appDelegate.persistentContainer.viewContext
+//        saved
         
-        let entity = NSEntityDescription.entity(forEntityName: "Session",
-                                                in: managedContext)!
+//        let json: String = generateJSON()
         
-        let session = NSManagedObject(entity: entity, insertInto: managedContext)
-        
-        let json: String = generateJSON()
-        
-        session.setValue(json, forKeyPath: "json")
-        session.setValue(startTime, forKeyPath: "startTime")
-        session.setValue(name!, forKeyPath: "user")
-        
-        // Saving the necessary portion of the URL to be played in the future due to sandboxing
-        // See generateURL() to see 'saved' file name + extension
-        session.setValue(saved, forKeyPath: "videoURL")
-        
-        DatabaseManager.shared.addSession(json: json, name: name!, startTime: dateToString(startTime),
-                                          videoURL: saved[0 ..< 36], completion: { success in
-            if (!success) {
-                print("Failed to save to database")
-            }
-        })
-        
-        do {
-            try managedContext.save()
-            sessions.append(session)
-        } catch let error as NSError {
-            print("Could not save. \(error), \(error.userInfo)")
-        }
+//        DatabaseManager.shared.addSession(json: json, name: name!, startTime: dateToString(startTime),
+//                                          videoURL: saved[0 ..< 36], completion: { success in
+//            if (!success) {
+//                print("Failed to save to database")
+//            }
+//        })
     }
     
     func clearData() {
@@ -485,19 +439,4 @@ class TrackingController: UIViewController, AVCaptureFileOutputRecordingDelegate
     
     // Stops the gyroscope (assuming that it is available)
     func stopGyros() { motionManager.stopGyroUpdates() }
-}
-
-// Used to truncate strings
-extension String {
-    subscript (bounds: CountableClosedRange<Int>) -> String {
-        let start = index(startIndex, offsetBy: bounds.lowerBound)
-        let end = index(startIndex, offsetBy: bounds.upperBound)
-        return String(self[start ... end])
-    }
-
-    subscript (bounds: CountableRange<Int>) -> String {
-        let start = index(startIndex, offsetBy: bounds.lowerBound)
-        let end = index(startIndex, offsetBy: bounds.upperBound)
-        return String(self[start ..< end])
-    }
 }

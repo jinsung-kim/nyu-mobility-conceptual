@@ -30,8 +30,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
          email: specialist's email - clients put their specialist's email to send data
          password - to be hooked with database
          */
-        let defaultValue = ["name": "", "email" : "",
-                            "password": "", "code": ""] as [String : Any]
+        let defaultValue = ["name": "", "email" : "", "password": ""] as [String : Any]
         defaults.register(defaults: defaultValue)
         
         return true

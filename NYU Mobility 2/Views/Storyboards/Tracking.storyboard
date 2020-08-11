@@ -10,7 +10,7 @@
         <!--Record Session-->
         <scene sceneID="D1L-UY-w5W">
             <objects>
-                <viewController storyboardIdentifier="TrackingController" id="8gM-aV-C7i" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="TrackingController" id="8gM-aV-C7i" customClass="TrackingController" customModule="NYU_Mobility_2" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="acx-EW-S8N">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -19,11 +19,21 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xab-pv-rbV">
+                                <rect key="frame" x="177" y="742" width="60" height="60"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="Ibj-bz-Ohb"/>
+                                    <constraint firstAttribute="width" constant="60" id="e3F-yP-Q9q"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="xab-pv-rbV" firstAttribute="centerX" secondItem="acx-EW-S8N" secondAttribute="centerX" id="0mr-D1-q6b"/>
                             <constraint firstItem="eeZ-99-2Q6" firstAttribute="centerX" secondItem="acx-EW-S8N" secondAttribute="centerX" id="1cn-JK-6as"/>
                             <constraint firstItem="XTR-n8-Xs0" firstAttribute="trailing" secondItem="eeZ-99-2Q6" secondAttribute="trailing" id="KAr-cZ-QWA"/>
+                            <constraint firstItem="XTR-n8-Xs0" firstAttribute="bottom" secondItem="xab-pv-rbV" secondAttribute="bottom" constant="60" id="PPj-XA-T5m"/>
                             <constraint firstItem="eeZ-99-2Q6" firstAttribute="leading" secondItem="XTR-n8-Xs0" secondAttribute="leading" id="sJy-ls-BGm"/>
                             <constraint firstItem="eeZ-99-2Q6" firstAttribute="trailing" secondItem="XTR-n8-Xs0" secondAttribute="trailing" id="sqJ-Qa-cVb"/>
                             <constraint firstItem="eeZ-99-2Q6" firstAttribute="top" secondItem="acx-EW-S8N" secondAttribute="top" id="tsl-JW-fx9"/>
@@ -34,10 +44,65 @@
                         <viewLayoutGuide key="safeArea" id="XTR-n8-Xs0"/>
                     </view>
                     <navigationItem key="navigationItem" title="Record Session" id="6h2-18-nT4"/>
+                    <connections>
+                        <outlet property="camPreview" destination="eeZ-99-2Q6" id="Z2f-NO-HU6"/>
+                        <outlet property="cameraButton" destination="xab-pv-rbV" id="rzD-ak-fQG"/>
+                        <segue destination="0Vc-0b-ohc" kind="show" identifier="VideoSessionTutorial" id="t3E-CO-zSL"/>
+                        <segue destination="6ce-fj-qlh" kind="show" identifier="ShowVideo" id="8ND-NC-P6E"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="l3Z-f1-45k" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="868.11594202898561" y="113.83928571428571"/>
+        </scene>
+        <!--Playback Controller-->
+        <scene sceneID="Atd-r5-Muf">
+            <objects>
+                <viewController id="6ce-fj-qlh" customClass="PlaybackController" customModule="NYU_Mobility_2" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="yIU-MO-92x">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="h7E-cM-WUz">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="h7E-cM-WUz" firstAttribute="centerY" secondItem="yIU-MO-92x" secondAttribute="centerY" id="37R-89-bl7"/>
+                            <constraint firstAttribute="bottom" secondItem="h7E-cM-WUz" secondAttribute="bottom" id="8jy-bf-Onn"/>
+                            <constraint firstItem="h7E-cM-WUz" firstAttribute="trailing" secondItem="6qC-MA-Bry" secondAttribute="trailing" id="LZJ-58-S4h"/>
+                            <constraint firstItem="h7E-cM-WUz" firstAttribute="leading" secondItem="6qC-MA-Bry" secondAttribute="leading" id="XtO-lH-brx"/>
+                            <constraint firstItem="h7E-cM-WUz" firstAttribute="centerX" secondItem="yIU-MO-92x" secondAttribute="centerX" id="khE-7i-CMn"/>
+                            <constraint firstItem="h7E-cM-WUz" firstAttribute="top" secondItem="yIU-MO-92x" secondAttribute="top" id="rZH-Rf-XPt"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6qC-MA-Bry"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="oX8-uZ-aJg"/>
+                    <connections>
+                        <outlet property="videoView" destination="h7E-cM-WUz" id="gdu-KM-pQW"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ngB-PG-RS9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1862" y="594"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="YFk-hU-iOl">
+            <objects>
+                <viewController id="0Vc-0b-ohc" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="RsJ-Ox-2Ni">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="ITJ-51-7ie"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="vda-1o-aGe"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iqX-Eh-AkB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1863" y="-348"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Dle-AS-pk2">
