@@ -25,6 +25,7 @@
 		A17DEB3124E1DD6C0026F3F9 /* PlaybackController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A17DEB3024E1DD6C0026F3F9 /* PlaybackController.swift */; };
 		A17DEB3424E1E56A0026F3F9 /* String+Indexing.swift in Sources */ = {isa = PBXBuildFile; fileRef = A17DEB3324E1E56A0026F3F9 /* String+Indexing.swift */; };
 		A17DEB3624E1E6A80026F3F9 /* ShareVideoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A17DEB3524E1E6A80026F3F9 /* ShareVideoController.swift */; };
+		A17DEB3824E229500026F3F9 /* AddUserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A17DEB3724E229500026F3F9 /* AddUserController.swift */; };
 		E88A02C01A2142CB7595762A /* Pods_NYU_Mobility_2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD5F394082FE5633924CD555 /* Pods_NYU_Mobility_2.framework */; };
 /* End PBXBuildFile section */
 
@@ -50,6 +51,7 @@
 		A17DEB3024E1DD6C0026F3F9 /* PlaybackController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaybackController.swift; sourceTree = "<group>"; };
 		A17DEB3324E1E56A0026F3F9 /* String+Indexing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Indexing.swift"; sourceTree = "<group>"; };
 		A17DEB3524E1E6A80026F3F9 /* ShareVideoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareVideoController.swift; sourceTree = "<group>"; };
+		A17DEB3724E229500026F3F9 /* AddUserController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddUserController.swift; sourceTree = "<group>"; };
 		AD5F394082FE5633924CD555 /* Pods_NYU_Mobility_2.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NYU_Mobility_2.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F0DC4E0BF772A7ECAB79A9E9 /* Pods-NYU Mobility 2.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NYU Mobility 2.release.xcconfig"; path = "Target Support Files/Pods-NYU Mobility 2/Pods-NYU Mobility 2.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -169,6 +171,7 @@
 			isa = PBXGroup;
 			children = (
 				A16AB19224E19F3B00742AFF /* GreetingController.swift */,
+				A17DEB3724E229500026F3F9 /* AddUserController.swift */,
 			);
 			path = "Registration Controllers";
 			sourceTree = "<group>";
@@ -310,6 +313,7 @@
 			files = (
 				A17DEB3624E1E6A80026F3F9 /* ShareVideoController.swift in Sources */,
 				A16AB17724E19A4700742AFF /* NYU_Mobility_2.xcdatamodeld in Sources */,
+				A17DEB3824E229500026F3F9 /* AddUserController.swift in Sources */,
 				A17DEB2524E1B5EA0026F3F9 /* BubbleTextField.swift in Sources */,
 				A17DEB2D24E1CA7B0026F3F9 /* DatabaseManager.swift in Sources */,
 				A17DEB2924E1C5C60026F3F9 /* TrackingController.swift in Sources */,

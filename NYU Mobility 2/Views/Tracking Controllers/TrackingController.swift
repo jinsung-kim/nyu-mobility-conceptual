@@ -395,9 +395,12 @@ class TrackingController: UIViewController, AVCaptureFileOutputRecordingDelegate
     
     // Saves Point
     func saveSession() {
-//        saved
         
-//        let json: String = generateJSON()
+        let json: String = generateJSON()
+        print(saved[0 ..< 36])
+        print(json)
+        print(name ?? "default value bc nil")
+        print(dateToString(startTime))
         
 //        DatabaseManager.shared.addSession(json: json, name: name!, startTime: dateToString(startTime),
 //                                          videoURL: saved[0 ..< 36], completion: { success in

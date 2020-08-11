@@ -8,6 +8,8 @@
 
 import UIKit
 import Device
+import FirebaseAuth
+import FirebaseDatabase
 import JGProgressHUD
 
 class GreetingController: UIViewController { // AKA login controller
@@ -90,16 +92,59 @@ class GreetingController: UIViewController { // AKA login controller
     
     
     @IBAction func loginSubmitted(_ sender: Any) {
-        save("email", email.text!)
+        save("username", email.text!)
         save("password", password.text!)
+        save("name", "") // Reset the value of the name
         
-        validLogin {
-            self.performSegue(withIdentifier: "ToTracking", sender: self)
+        validLogin { res in
+            if (res) { // Login successful
+                self.performSegue(withIdentifier: "ToTracking", sender: self)
+            } else {
+                self.alertUserLoginError()
+            }
         }
     }
     
-    func validLogin(completionOuter: @escaping () -> Void) {
-        completionOuter()
+    func validLogin(completion: @escaping (Bool) -> Void) {
+        let email = UserDefaults.standard.string(forKey: "username")
+        let password = UserDefaults.standard.string(forKey: "password")
+        
+        spinner.show(in: view)
+
+        // Validate Login
+        FirebaseAuth.Auth.auth().signIn(withEmail: email!, password: password!, completion: { [weak self] authResult, error in
+            guard let strongSelf = self else {
+                return
+            }
+            
+            DispatchQueue.main.async {
+                strongSelf.spinner.dismiss()
+            }
+            
+            guard let _ = authResult, error == nil else {
+                print("Failed to log in user with email: \(email!)")
+                completion(false)
+                return
+            }
+            
+            let safeEmail = DatabaseManager.safeEmail(email!)
+            DatabaseManager.shared.getDataFor(path: safeEmail, completion: { result in
+                switch (result) {
+                case .success(let data):
+                    guard let userData = data as? [String: Any],
+                        let name = userData["name"] as? String else {
+                            return
+                    }
+                    // Stores mode for the user
+                    UserDefaults.standard.set(name, forKey: "name")
+                    completion(true)
+                case .failure(let error):
+                    print("Failed to read data with error: \(error)")
+                    // Values will not pass
+                    UserDefaults.standard.set("", forKey: "name")
+                }
+            })
+        })
     }
     
     func exitEdit() {
@@ -126,6 +171,7 @@ class GreetingController: UIViewController { // AKA login controller
 // Used to go from one UITextField to the next
 extension UITextField {
     class func connectFields(fields: [UITextField]) -> Void {
+
         guard let last = fields.last else {
             return
         }

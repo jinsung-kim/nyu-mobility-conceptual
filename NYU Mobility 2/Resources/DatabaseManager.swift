@@ -87,7 +87,7 @@ extension DatabaseManager {
     public func insertUser(with user: User,
                                  completion: @escaping (Bool) -> Void) {
         database.child(user.safeEmail).setValue([
-            "fullName": user.fullName,
+            "name": user.fullName,
             "username": user.username,
             "password": user.password
             ], withCompletionBlock: {
@@ -106,7 +106,7 @@ extension DatabaseManager {
                     if var usersCollection = snapshot.value as? [[String: String]] {
                         // Append to user dictionary
                         let newUser = [
-                            "fullName": user.fullName,
+                            "name": user.fullName,
                             "username": user.username,
                             "password": user.password
                         ]
@@ -125,7 +125,7 @@ extension DatabaseManager {
                         // No users in that array -> create that array
                         let newUserCollection: [[String: String]] = [
                             [
-                                "fullName": user.fullName,
+                                "name": user.fullName,
                                 "username": user.username,
                                 "password": user.password
                             ]
@@ -152,10 +152,11 @@ extension DatabaseManager {
                            videoURL: String, completion: @escaping (Bool) -> Void) {
         self.database.child("sessions").observeSingleEvent(of: .value, with: {
             snapshot in
+            // If sessions already exists
             if var sessions = snapshot.value as? [[String: String]] {
                 let session = [
                     "json": json,
-                    "clientName": name,
+                    "name": name,
                     "startTime": startTime,
                     "videoURL": videoURL
                 ]
@@ -168,11 +169,12 @@ extension DatabaseManager {
                     }
                     completion(true)
                 })
+            // If there have been more previous sessions tracked
             } else {
                 let session: [[String: String]] = [
                     [
                     "json": json,
-                    "clientName": name,
+                    "name": name,
                     "startTime": startTime,
                     "videoURL": videoURL
                     ]
