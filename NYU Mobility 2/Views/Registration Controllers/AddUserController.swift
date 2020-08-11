@@ -80,7 +80,6 @@ class AddUserController: UIViewController {
         last = sender
     }
     
-    
     func exitEdit() {
         let tapGestureRecognizer = UITapGestureRecognizer(target: view, action: #selector(UIView.endEditing(_:)))
         self.view.addGestureRecognizer(tapGestureRecognizer)

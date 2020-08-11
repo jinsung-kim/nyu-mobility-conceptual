@@ -52,4 +52,11 @@ class PlaybackController: UIViewController {
         performSegue(withIdentifier: "ShareVideo", sender: self)
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if (segue.destination is ShareVideoController) {
+            let vc = segue.destination as? ShareVideoController
+            vc?.videoURL = self.videoURL
+        }
+    }
+    
 }

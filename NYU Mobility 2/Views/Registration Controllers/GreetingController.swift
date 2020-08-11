@@ -31,6 +31,14 @@ class GreetingController: UIViewController { // AKA login controller
         view.backgroundColor = Colors.nyuBackground
         layoutSetup()
         exitEdit()
+        bypassLogin()
+    }
+    
+    /// Use this if the user has already signed in -> go straight to the tracking controller
+    func bypassLogin() {
+        if (UserDefaults.standard.string(forKey: "name") != "") {
+            performSegue(withIdentifier: "ToTracking", sender: self)
+        }
     }
     
     func layoutSetup() {

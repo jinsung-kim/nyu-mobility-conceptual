@@ -65,6 +65,10 @@ class TrackingController: UIViewController, AVCaptureFileOutputRecordingDelegate
         // Screen will not go to sleep with this line below
         UIApplication.shared.isIdleTimerDisabled = true
         
+        // Hide back button
+        navigationItem.leftBarButtonItem = nil
+        navigationItem.hidesBackButton = true
+        
         // Instructions Page Redirect setup
         instructionButton()
         getLocationPermission()
@@ -88,7 +92,7 @@ class TrackingController: UIViewController, AVCaptureFileOutputRecordingDelegate
     }
     
     @objc func sessionsTap() {
-        performSegue(withIdentifier: "VideoSessionTutorial", sender: self)
+        performSegue(withIdentifier: "Tutorial", sender: self)
     }
     
     func setupButton() {
@@ -402,12 +406,12 @@ class TrackingController: UIViewController, AVCaptureFileOutputRecordingDelegate
         print(name ?? "default value bc nil")
         print(dateToString(startTime))
         
-//        DatabaseManager.shared.addSession(json: json, name: name!, startTime: dateToString(startTime),
-//                                          videoURL: saved[0 ..< 36], completion: { success in
-//            if (!success) {
-//                print("Failed to save to database")
-//            }
-//        })
+        DatabaseManager.shared.addSession(json: json, name: name!, startTime: dateToString(startTime),
+                                          videoURL: saved[0 ..< 36], completion: { success in
+            if (!success) {
+                print("Failed to save to database")
+            }
+        })
     }
     
     func clearData() {
