@@ -26,9 +26,7 @@ class TrackingController: UIViewController, AVCaptureFileOutputRecordingDelegate
     var outputURL: URL!
     var saved: String = ""
     
-    // Movement tracking managers (copied from SpecialistTrackingController.swift
-    
-    var name: String! = "Jin"
+    // Movement tracking managers (copied from SpecialistTrackingController.swift)
     
     // Used to track pedometer when saving data
     private var steps: Int32 = 0
@@ -193,6 +191,7 @@ class TrackingController: UIViewController, AVCaptureFileOutputRecordingDelegate
         if (segue.identifier == "ShowVideo") {
             let vc = segue.destination as! PlaybackController
             vc.videoURL = outputURL
+            vc.saved = saved
         }
     }
     
@@ -399,14 +398,8 @@ class TrackingController: UIViewController, AVCaptureFileOutputRecordingDelegate
     
     // Saves Point
     func saveSession() {
-        
         let json: String = generateJSON()
-        print(saved[0 ..< 36])
-        print(json)
-        print(name ?? "default value bc nil")
-        print(dateToString(startTime))
-        
-        DatabaseManager.shared.addSession(json: json, name: name!, startTime: dateToString(startTime),
+        DatabaseManager.shared.addSession(json: json, name: UserDefaults.standard.string(forKey: "name")!, startTime: dateToString(startTime),
                                           videoURL: saved[0 ..< 36], completion: { success in
             if (!success) {
                 print("Failed to save to database")

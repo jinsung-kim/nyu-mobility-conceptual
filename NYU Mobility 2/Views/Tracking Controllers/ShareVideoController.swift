@@ -8,15 +8,39 @@
 
 import UIKit
 import Photos
+import Firebase
+import FirebaseStorage
+import JGProgressHUD
 
 class ShareVideoController: UIViewController {
     
-    @IBOutlet weak var shareVideoButton: UIButton!
+    private let spinner = JGProgressHUD(style: .dark)
     
     var videoURL: URL!
-    
+    var saved: String!
+  
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+    
+    func uploadVideo() {
+//        print(saved[0 ..< 36]) // Ex: DA4E79BC-5085-42C2-A9C6-6E0CE74BAF1F
+        spinner.show(in: view)
+        let storage = Storage.storage()
+        let storageRef = storage.reference()
+        let videoRef = storageRef.child(saved[0 ..< 36])
+        _ = videoRef.putFile(from: videoURL!, metadata: nil, completion: {
+            (metadata, error) in
+            guard metadata != nil else {
+                self.alertUserSaveError(message: "The video could not be saved to the database")
+                return
+            }
+            DispatchQueue.main.async {
+                self.spinner.dismiss()
+            }
+            print("Video uploaded")
+            self.successMessage()
+        })
     }
     
     /**
@@ -65,10 +89,20 @@ class ShareVideoController: UIViewController {
                 self.alertUserSaveError()
             }
         }
+        uploadVideo()
     }
     
     func alertUserSaveError(message: String = "The video could not be saved to the camera roll") {
         let alert = UIAlertController(title: "Woops",
+                                      message: message,
+                                      preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title:"Dismiss",
+                                      style: .cancel, handler: nil))
+        present(alert, animated: true)
+    }
+    
+    func successMessage(message: String = "The video has been uploaded successfully") {
+        let alert = UIAlertController(title: "Successfully saved",
                                       message: message,
                                       preferredStyle: .alert)
         alert.addAction(UIAlertAction(title:"Dismiss",

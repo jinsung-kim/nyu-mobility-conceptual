@@ -113,9 +113,6 @@
                         <viewLayoutGuide key="safeArea" id="skx-yN-dbq"/>
                     </view>
                     <navigationItem key="navigationItem" title="Share Video" id="YPQ-3F-Bff"/>
-                    <connections>
-                        <outlet property="shareVideoButton" destination="wGq-z3-SLs" id="eSL-og-SRv"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JRd-hA-rTl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

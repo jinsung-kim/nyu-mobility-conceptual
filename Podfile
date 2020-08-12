@@ -10,6 +10,7 @@ target 'NYU Mobility 2' do
     pod 'SwiftyJSON', '~> 4.0'
     pod 'Firebase/Core'
     pod 'Firebase/Database'
+    pod 'Firebase/Storage'
     pod 'Firebase/Auth'
     pod 'JGProgressHUD'
 

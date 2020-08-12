@@ -15,6 +15,7 @@ class PlaybackController: UIViewController {
     var avPlayerLayer: AVPlayerLayer!
 
     var videoURL: URL!
+    var saved: String!
     
     @IBOutlet weak var videoView: UIView!
     
@@ -56,6 +57,7 @@ class PlaybackController: UIViewController {
         if (segue.destination is ShareVideoController) {
             let vc = segue.destination as? ShareVideoController
             vc?.videoURL = self.videoURL
+            vc?.saved = self.saved
         }
     }
     
