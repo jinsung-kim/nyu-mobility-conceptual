@@ -30,9 +30,9 @@ class TrackingController: UIViewController, AVCaptureFileOutputRecordingDelegate
     
     // Used to track pedometer when saving data
     private var steps: Int32 = 0
-    private var maxSteps: Int32 = 0
+    private var prevSteps: Int32 = 0
     private var distance: Int32 = 0 // In meters
-    private var maxDistance: Int32 = 0
+    private var prevDistance: Int32 = 0
     private var startTime: Date = Date()
     
     // GPS Location Services
@@ -330,8 +330,8 @@ class TrackingController: UIViewController, AVCaptureFileOutputRecordingDelegate
             [weak self] (activity: CMMotionActivity?) in
             self?.steps = 0
             self?.distance = 0
-            self?.maxSteps = 0
-            self?.maxDistance = 0
+            self?.prevSteps = 0
+            self?.prevDistance = 0
         }
     }
     
@@ -367,16 +367,17 @@ class TrackingController: UIViewController, AVCaptureFileOutputRecordingDelegate
      */
     func saveData(currTime: Date, significant: Bool) {
         // JSON array implementation (See Point.swift for model)
-        if (steps >= maxSteps) {
-            maxSteps = steps
-        }
-        if (distance >= maxDistance) {
-            maxDistance = distance
-        }
+        var temp: Int32 = steps // Ex: 5 steps in the last session
+        steps = steps - prevSteps
+        prevSteps = temp
+        
+        temp = distance
+        distance = distance - prevDistance
+        prevDistance = temp
         
         // If the data collected is valid -> insert into the collection of points
-        if (maxDistance != 0 || maxSteps != 0 || points.isEmpty || significant) {
-            points.append(Point(dateToString(), maxSteps, maxDistance,
+        if (points.isEmpty || significant) {
+            points.append(Point(dateToString(), steps, distance,
                                 avgPace, currPace, currCad,
                                 locationArray, gyroDict))
             

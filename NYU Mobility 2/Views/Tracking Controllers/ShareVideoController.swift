@@ -24,10 +24,8 @@ class ShareVideoController: UIViewController {
     }
     
     func uploadVideo() {
-//        print(saved[0 ..< 36]) // Ex: DA4E79BC-5085-42C2-A9C6-6E0CE74BAF1F
         spinner.show(in: view)
-        let storage = Storage.storage()
-        let storageRef = storage.reference()
+        let storageRef = Storage.storage().reference()
         let videoRef = storageRef.child(saved[0 ..< 36])
         _ = videoRef.putFile(from: videoURL!, metadata: nil, completion: {
             (metadata, error) in
@@ -109,5 +107,4 @@ class ShareVideoController: UIViewController {
                                       style: .cancel, handler: nil))
         present(alert, animated: true)
     }
-    
 }
