@@ -110,7 +110,7 @@ class TrackingController: UIViewController, AVCaptureFileOutputRecordingDelegate
 
     func setupSession() -> Bool {
         // Proof of concept: Lowering quality to 720p
-        captureSession.sessionPreset = AVCaptureSession.Preset.medium
+        captureSession.sessionPreset = AVCaptureSession.Preset.hd1280x720
         let camera = AVCaptureDevice.default(for: AVMediaType.video)!
         
         do {
