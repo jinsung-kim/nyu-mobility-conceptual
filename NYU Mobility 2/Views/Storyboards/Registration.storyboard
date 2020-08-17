@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ILq-hv-t8L">
-    <device id="retina4_0" orientation="portrait" appearance="light"/>
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -10,20 +10,20 @@
         <!--Registration-->
         <scene sceneID="I7f-lq-Sle">
             <objects>
-                <viewController title="Registration" id="FKW-6r-Cuk" customClass="GreetingController" customModule="NYU_Mobility_2" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginView" title="Registration" id="FKW-6r-Cuk" customClass="GreetingController" customModule="NYU_Mobility_2" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="4Ud-qJ-CID">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="4tU-fb-Le5">
-                                <rect key="frame" x="100" y="74" width="120" height="120"/>
+                                <rect key="frame" x="147" y="118" width="120" height="120"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="120" id="6SW-jw-mhS"/>
                                     <constraint firstAttribute="width" constant="120" id="IWP-KN-emL"/>
                                 </constraints>
                             </imageView>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lFP-kI-0qa" customClass="BubbleTextField" customModule="NYU_Mobility_2" customModuleProvider="target">
-                                <rect key="frame" x="144" y="248" width="32" height="34"/>
+                                <rect key="frame" x="191" y="292" width="32" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
@@ -31,7 +31,7 @@
                                 </connections>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ymn-ps-dU2" customClass="BubbleTextField" customModule="NYU_Mobility_2" customModuleProvider="target">
-                                <rect key="frame" x="144" y="326" width="32" height="34"/>
+                                <rect key="frame" x="191" y="370" width="32" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                 <connections>
@@ -39,27 +39,27 @@
                                 </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fV1-TJ-2fr" customClass="BubbleButton" customModule="NYU_Mobility_2" customModuleProvider="target">
-                                <rect key="frame" x="141" y="408" width="38" height="30"/>
+                                <rect key="frame" x="188" y="702" width="38" height="30"/>
                                 <state key="normal" title="Login"/>
                                 <connections>
                                     <action selector="loginSubmitted:" destination="FKW-6r-Cuk" eventType="touchUpInside" id="1Pd-Xz-aoT"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9yS-p5-7EU" customClass="BubbleButton" customModule="NYU_Mobility_2" customModuleProvider="target">
-                                <rect key="frame" x="104.5" y="488" width="111" height="30"/>
+                                <rect key="frame" x="151.5" y="782" width="111" height="30"/>
                                 <state key="normal" title="Register Instead"/>
                                 <connections>
                                     <segue destination="X80-SA-dQW" kind="show" id="Sma-BD-t2A"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Password" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B1r-MQ-gFz">
-                                <rect key="frame" x="123" y="297" width="74" height="21"/>
+                                <rect key="frame" x="170" y="341" width="74" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IIz-h9-62T">
-                                <rect key="frame" x="139.5" y="219" width="41" height="21"/>
+                                <rect key="frame" x="186.5" y="263" width="41" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -194,10 +194,10 @@
         <!--Navigation Controller-->
         <scene sceneID="gwu-NJ-5u2">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ILq-hv-t8L" sceneMemberID="viewController">
+                <navigationController id="ILq-hv-t8L" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ZE9-Mg-2zr">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -214,25 +214,25 @@
             <objects>
                 <viewController id="X80-SA-dQW" customClass="AddUserController" customModule="NYU_Mobility_2" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5QL-4I-zFg">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QfQ-1e-r5V" customClass="BubbleButton" customModule="NYU_Mobility_2" customModuleProvider="target">
-                                <rect key="frame" x="131.5" y="523" width="57" height="30"/>
+                                <rect key="frame" x="178.5" y="817" width="57" height="30"/>
                                 <state key="normal" title="Register"/>
                                 <connections>
                                     <action selector="registered:" destination="X80-SA-dQW" eventType="touchUpInside" id="Ams-mv-ER3"/>
                                 </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="CGC-8h-DAU">
-                                <rect key="frame" x="100" y="74" width="120" height="120"/>
+                                <rect key="frame" x="147" y="118" width="120" height="120"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="120" id="1Lj-Ih-AIP"/>
                                     <constraint firstAttribute="height" constant="120" id="G9U-U0-t6X"/>
                                 </constraints>
                             </imageView>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Qhu-GF-3uk" customClass="BubbleTextField" customModule="NYU_Mobility_2" customModuleProvider="target">
-                                <rect key="frame" x="144" y="228" width="32" height="34"/>
+                                <rect key="frame" x="191" y="272" width="32" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
@@ -241,7 +241,7 @@
                                 </connections>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7fV-J3-LQu" customClass="BubbleTextField" customModule="NYU_Mobility_2" customModuleProvider="target">
-                                <rect key="frame" x="144" y="370" width="32" height="34"/>
+                                <rect key="frame" x="191" y="414" width="32" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                 <connections>
@@ -250,13 +250,13 @@
                                 </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dUZ-ad-CgS">
-                                <rect key="frame" x="139.5" y="199" width="41" height="21"/>
+                                <rect key="frame" x="186.5" y="243" width="41" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZEP-p9-W0G" customClass="BubbleTextField" customModule="NYU_Mobility_2" customModuleProvider="target">
-                                <rect key="frame" x="144" y="441" width="32" height="34"/>
+                                <rect key="frame" x="191" y="485" width="32" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                 <connections>
@@ -265,13 +265,13 @@
                                 </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Re-enter Password" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t2m-ha-Wqr">
-                                <rect key="frame" x="87" y="412" width="146" height="21"/>
+                                <rect key="frame" x="134" y="456" width="146" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Full Name:" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FLS-W5-GHh" customClass="BubbleTextField" customModule="NYU_Mobility_2" customModuleProvider="target">
-                                <rect key="frame" x="112" y="299" width="96.5" height="34"/>
+                                <rect key="frame" x="159" y="343" width="96.5" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
@@ -280,13 +280,13 @@
                                 </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="puY-aP-vUN">
-                                <rect key="frame" x="137.5" y="270" width="45" height="21"/>
+                                <rect key="frame" x="184.5" y="314" width="45" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Password" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kjd-og-dBB">
-                                <rect key="frame" x="123" y="341" width="74" height="21"/>
+                                <rect key="frame" x="170" y="385" width="74" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -396,7 +396,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="LhC-oc-956"/>
+        <segue reference="cAi-H9-phW"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="logo" width="120" height="120"/>

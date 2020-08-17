@@ -63,10 +63,6 @@ class TrackingController: UIViewController, AVCaptureFileOutputRecordingDelegate
         // Screen will not go to sleep with this line below
         UIApplication.shared.isIdleTimerDisabled = true
         
-        // Hide back button
-        navigationItem.leftBarButtonItem = nil
-        navigationItem.hidesBackButton = true
-        
         // Instructions Page Redirect setup
         instructionButton()
         getLocationPermission()

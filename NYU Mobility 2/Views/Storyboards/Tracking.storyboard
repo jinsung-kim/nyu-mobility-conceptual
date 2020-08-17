@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina5_9" orientation="portrait" appearance="light"/>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="2pH-mL-Xmc">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -10,17 +10,17 @@
         <!--Record Session-->
         <scene sceneID="D1L-UY-w5W">
             <objects>
-                <viewController storyboardIdentifier="TrackingController" id="8gM-aV-C7i" customClass="TrackingController" customModule="NYU_Mobility_2" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="8gM-aV-C7i" customClass="TrackingController" customModule="NYU_Mobility_2" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="acx-EW-S8N">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eeZ-99-2Q6">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xab-pv-rbV">
-                                <rect key="frame" x="157.66666666666666" y="658" width="60" height="60"/>
+                                <rect key="frame" x="177" y="742" width="60" height="60"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="Ibj-bz-Ohb"/>
@@ -53,18 +53,18 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="l3Z-f1-45k" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="868.11594202898561" y="113.83928571428571"/>
+            <point key="canvasLocation" x="1778.2608695652175" y="113.83928571428571"/>
         </scene>
         <!--Playback Controller-->
         <scene sceneID="Atd-r5-Muf">
             <objects>
                 <viewController id="6ce-fj-qlh" customClass="PlaybackController" customModule="NYU_Mobility_2" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="yIU-MO-92x">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="h7E-cM-WUz">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             </view>
                         </subviews>
@@ -87,18 +87,18 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ngB-PG-RS9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1862" y="594"/>
+            <point key="canvasLocation" x="2771.0144927536235" y="593.97321428571422"/>
         </scene>
         <!--Share Video-->
         <scene sceneID="nC4-Qx-Lm8">
             <objects>
                 <viewController id="2I1-UP-3BU" customClass="ShareVideoController" customModule="NYU_Mobility_2" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Nv1-jP-J0H">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wGq-z3-SLs">
-                                <rect key="frame" x="35.666666666666657" y="209" width="304" height="394"/>
+                                <rect key="frame" x="55" y="251" width="304" height="394"/>
                                 <state key="normal" image="share"/>
                                 <connections>
                                     <action selector="shareVideoSubmitted:" destination="2I1-UP-3BU" eventType="touchUpInside" id="89V-Ke-uyK"/>
@@ -116,18 +116,18 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JRd-hA-rTl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2856.8000000000002" y="592.61083743842369"/>
+            <point key="canvasLocation" x="3766.666666666667" y="591.96428571428567"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="YFk-hU-iOl">
             <objects>
                 <viewController id="0Vc-0b-ohc" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="RsJ-Ox-2Ni">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VVg-RM-RJK" customClass="BubbleButton" customModule="NYU_Mobility_2" customModuleProvider="target">
-                                <rect key="frame" x="112.66666666666669" y="688" width="150" height="50"/>
+                                <rect key="frame" x="132" y="772" width="150" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="150" id="4kE-Z5-85A"/>
                                     <constraint firstAttribute="height" constant="50" id="AkK-N8-hNX"/>
@@ -138,14 +138,14 @@
                                 </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="wearing" translatesAutoresizingMaskIntoConstraints="NO" id="0dH-To-PkF">
-                                <rect key="frame" x="37.666666666666657" y="108" width="300" height="300"/>
+                                <rect key="frame" x="57" y="108" width="300" height="300"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="300" id="dei-hU-grN"/>
                                     <constraint firstAttribute="height" constant="300" id="m2c-xc-10j"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Place the cell phone into the carrying bag. The camera should be facing away from you." textAlignment="center" lineBreakMode="wordWrap" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lZg-q1-kTX">
-                                <rect key="frame" x="63" y="548" width="249" height="110"/>
+                                <rect key="frame" x="82.5" y="632" width="249" height="110"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="249" id="QnF-PC-QJr"/>
                                 </constraints>
@@ -211,25 +211,25 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iqX-Eh-AkB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1861.5999999999999" y="-348.57571214392806"/>
+            <point key="canvasLocation" x="2771.0144927536235" y="-348.88392857142856"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="5qH-7J-lWn">
             <objects>
                 <viewController id="12n-WU-uNA" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="vhg-PM-zss">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="front-phone" translatesAutoresizingMaskIntoConstraints="NO" id="2Fj-ct-mor">
-                                <rect key="frame" x="37.666666666666657" y="118" width="300" height="300"/>
+                                <rect key="frame" x="57" y="118" width="300" height="300"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="300" id="D6l-jN-hic"/>
                                     <constraint firstAttribute="height" constant="300" id="WxU-TS-w22"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap the white button to start recording" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pxf-JB-mql">
-                                <rect key="frame" x="63" y="598" width="249" height="60"/>
+                                <rect key="frame" x="82.5" y="682" width="249" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="249" id="pDu-lo-YUg"/>
                                 </constraints>
@@ -238,7 +238,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="55v-ov-R4K" customClass="BubbleButton" customModule="NYU_Mobility_2" customModuleProvider="target">
-                                <rect key="frame" x="112.66666666666669" y="688" width="150" height="50"/>
+                                <rect key="frame" x="132" y="772" width="150" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="150" id="Tfj-7t-FRE"/>
                                     <constraint firstAttribute="height" constant="50" id="u66-0o-w8d"/>
@@ -306,18 +306,18 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8aq-p8-l3g" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2856.8000000000002" y="-349.50738916256159"/>
+            <point key="canvasLocation" x="3766.666666666667" y="-349.55357142857139"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="scA-eU-X2K">
             <objects>
                 <viewController id="XU9-Xb-eFd" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="0Gt-q5-pde">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0ec-3L-p4K" customClass="BubbleButton" customModule="NYU_Mobility_2" customModuleProvider="target">
-                                <rect key="frame" x="112.66666666666669" y="688" width="150" height="50"/>
+                                <rect key="frame" x="132" y="772" width="150" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="150" id="BvI-ba-lOM"/>
                                     <constraint firstAttribute="height" constant="50" id="UBO-zL-t6t"/>
@@ -328,13 +328,13 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap the red button to stop the recording" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="81J-jz-DyL">
-                                <rect key="frame" x="0.0" y="598" width="375" height="60"/>
+                                <rect key="frame" x="0.0" y="682" width="414" height="60"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="front-phone" translatesAutoresizingMaskIntoConstraints="NO" id="MZh-A7-b9b">
-                                <rect key="frame" x="37.666666666666657" y="118" width="300" height="300"/>
+                                <rect key="frame" x="57" y="118" width="300" height="300"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="300" id="nWR-hy-82r"/>
                                     <constraint firstAttribute="height" constant="300" id="oDi-Ch-j1v"/>
@@ -401,29 +401,99 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1am-6z-mfB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="9uW-Hj-6TR" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="3869.5999999999999" y="-350.2463054187192"/>
+            <point key="canvasLocation" x="4779.7101449275369" y="-350.89285714285711"/>
+        </scene>
+        <!--Get Started-->
+        <scene sceneID="mfq-3b-H2N">
+            <objects>
+                <viewController storyboardIdentifier="TrackingController" id="fwq-Yv-YRB" customClass="StartingController" customModule="NYU_Mobility_2" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ybA-Vp-6Ao">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Yny-sB-Fza">
+                                <rect key="frame" x="87" y="328" width="240" height="240"/>
+                                <color key="backgroundColor" red="0.33066866639999998" green="0.118582416" blue="0.57703403559999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="240" id="68E-oS-FaV"/>
+                                    <constraint firstAttribute="height" constant="240" id="ptD-WQ-C7e"/>
+                                </constraints>
+                            </view>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="oandmicon" translatesAutoresizingMaskIntoConstraints="NO" id="dD8-jO-5Jd">
+                                <rect key="frame" x="266" y="714" width="128" height="128"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="128" id="g0X-Lc-wKj"/>
+                                    <constraint firstAttribute="width" constant="128" id="o4O-tK-Lrs"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VX4-Dg-VUw">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
+                                <state key="normal" title="Start">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="startClicked:" destination="fwq-Yv-YRB" eventType="touchUpInside" id="2zU-Qc-tlI"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="EDa-vL-ntt" firstAttribute="bottom" secondItem="dD8-jO-5Jd" secondAttribute="bottom" constant="20" id="BNh-W2-LqU"/>
+                            <constraint firstItem="Yny-sB-Fza" firstAttribute="centerY" secondItem="ybA-Vp-6Ao" secondAttribute="centerY" id="Bzz-Zb-PMg"/>
+                            <constraint firstItem="Yny-sB-Fza" firstAttribute="centerX" secondItem="ybA-Vp-6Ao" secondAttribute="centerX" id="CBx-nl-yCC"/>
+                            <constraint firstItem="VX4-Dg-VUw" firstAttribute="leading" secondItem="EDa-vL-ntt" secondAttribute="leading" id="EX5-2E-GEo"/>
+                            <constraint firstItem="EDa-vL-ntt" firstAttribute="trailing" secondItem="dD8-jO-5Jd" secondAttribute="trailing" constant="20" id="URO-Rw-TQs"/>
+                            <constraint firstItem="VX4-Dg-VUw" firstAttribute="trailing" secondItem="EDa-vL-ntt" secondAttribute="trailing" id="cXF-ew-Nvc"/>
+                            <constraint firstItem="VX4-Dg-VUw" firstAttribute="top" secondItem="ybA-Vp-6Ao" secondAttribute="top" id="oF1-CX-NIM"/>
+                            <constraint firstAttribute="bottom" secondItem="VX4-Dg-VUw" secondAttribute="bottom" id="xbs-ZJ-nBt"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="EDa-vL-ntt"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Get Started" id="bBp-Tz-46z"/>
+                    <connections>
+                        <outlet property="circleView" destination="Yny-sB-Fza" id="8WE-qg-9Tp"/>
+                        <outlet property="startButton" destination="VX4-Dg-VUw" id="N3w-I2-9Cc"/>
+                        <segue destination="8gM-aV-C7i" kind="show" identifier="Started" id="ubV-JC-ERn"/>
+                        <segue destination="OCT-no-DgO" kind="show" identifier="Logout" id="GEl-L7-l6B"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hPF-JW-zMb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="792.75362318840587" y="113.83928571428571"/>
+        </scene>
+        <!--LoginView-->
+        <scene sceneID="deq-kq-So3">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Registration" referencedIdentifier="LoginView" id="OCT-no-DgO" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="g33-m6-ut8"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3h8-Go-4Cc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="793" y="690"/>
         </scene>
         <!--Navigation Controller-->
-        <scene sceneID="Dle-AS-pk2">
+        <scene sceneID="lln-qE-Fyn">
             <objects>
-                <navigationController storyboardIdentifier="MainTracking" automaticallyAdjustsScrollViewInsets="NO" id="X8J-SZ-42D" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="2pH-mL-Xmc" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Lwe-M1-pVe">
-                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="WgC-uz-3S2">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="8gM-aV-C7i" kind="relationship" relationship="rootViewController" id="Qj2-w3-rtl"/>
+                        <segue destination="fwq-Yv-YRB" kind="relationship" relationship="rootViewController" id="nXo-H2-3Q8"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="f1J-cI-7Ak" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="afL-l8-huh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-42.028985507246382" y="113.83928571428571"/>
+            <point key="canvasLocation" x="-200.00000000000003" y="113.83928571428571"/>
         </scene>
     </scenes>
     <resources>
         <image name="front-phone" width="1507" height="3126"/>
+        <image name="oandmicon" width="820" height="816"/>
         <image name="share" width="304" height="394"/>
         <image name="wearing" width="2922" height="2276"/>
     </resources>

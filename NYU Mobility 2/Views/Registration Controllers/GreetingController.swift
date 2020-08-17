@@ -28,6 +28,12 @@ class GreetingController: UIViewController { // AKA login controller
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationController?.isNavigationBarHidden = false // We want to see the bar at all times
+        
+        // Hide back button -> Since logout button will handle that case
+        navigationItem.leftBarButtonItem = nil
+        navigationItem.hidesBackButton = true
+        
         view.backgroundColor = Colors.nyuBackground
         layoutSetup()
         exitEdit()
