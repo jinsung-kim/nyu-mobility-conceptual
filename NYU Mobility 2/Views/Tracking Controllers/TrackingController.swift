@@ -25,6 +25,7 @@ class TrackingController: UIViewController, AVCaptureFileOutputRecordingDelegate
     var activeInput: AVCaptureDeviceInput!
     var outputURL: URL!
     var saved: String = ""
+    var json: String = ""
     
     // Movement tracking managers (copied from SpecialistTrackingController.swift)
     
@@ -189,7 +190,7 @@ class TrackingController: UIViewController, AVCaptureFileOutputRecordingDelegate
             let vc = segue.destination as! PlaybackController
             vc.videoURL = outputURL
             vc.saved = saved
-            vc.json = generateJSON()
+            vc.json = json
         }
     }
     
@@ -307,6 +308,7 @@ class TrackingController: UIViewController, AVCaptureFileOutputRecordingDelegate
         stopUpdating()
 //        stopGyros()
         saveData(currTime: Date(), significant: true)
+        json = generateJSON()
     }
     
     func stopUpdating() { pedometer.stopUpdates() }
