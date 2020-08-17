@@ -18,6 +18,7 @@ class ShareVideoController: UIViewController {
     
     var videoURL: URL!
     var saved: String!
+    var json: String!
   
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -87,7 +88,46 @@ class ShareVideoController: UIViewController {
                 self.alertUserSaveError()
             }
         }
-        uploadVideo()
+//        uploadVideo()
+        writeJSONFile()
+        
+    }
+    
+    func writeJSONFile() {
+        let file = "\(saved[0 ..< 36]).json"
+        let content = json
+        
+        let directory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
+        let fileURL = directory.appendingPathComponent(file)
+        
+        do {
+            try content!.write(to: fileURL, atomically: true, encoding: .utf8)
+        } catch {
+            print("Error: \(error)")
+        }
+        
+        let objectsToShare = [fileURL]
+        let activityVC = UIActivityViewController(activityItems: objectsToShare, applicationActivities: nil)
+
+        activityVC.setValue("Export", forKey: "subject")
+
+        // New Excluded Activities Code
+        if #available(iOS 9.0, *) {
+            activityVC.excludedActivityTypes = [UIActivity.ActivityType.addToReadingList,
+                                                UIActivity.ActivityType.assignToContact, UIActivity.ActivityType.copyToPasteboard,
+                                                UIActivity.ActivityType.mail, UIActivity.ActivityType.message,
+                                                UIActivity.ActivityType.openInIBooks, UIActivity.ActivityType.postToTencentWeibo,
+                                                UIActivity.ActivityType.postToVimeo, UIActivity.ActivityType.postToWeibo,
+                                                UIActivity.ActivityType.print]
+        // Fallback on earlier versions
+        } else {
+            activityVC.excludedActivityTypes = [UIActivity.ActivityType.addToReadingList,
+                                                UIActivity.ActivityType.assignToContact, UIActivity.ActivityType.copyToPasteboard,
+                                                UIActivity.ActivityType.mail, UIActivity.ActivityType.message,
+                                                UIActivity.ActivityType.postToTencentWeibo, UIActivity.ActivityType.postToVimeo,
+                                                UIActivity.ActivityType.postToWeibo, UIActivity.ActivityType.print]
+        }
+        present(activityVC, animated: true, completion: nil)
     }
     
     func alertUserSaveError(message: String = "The video could not be saved to the camera roll") {

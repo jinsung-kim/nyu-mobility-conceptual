@@ -16,6 +16,7 @@ class PlaybackController: UIViewController {
 
     var videoURL: URL!
     var saved: String!
+    var json: String!
     
     @IBOutlet weak var videoView: UIView!
     
@@ -58,6 +59,7 @@ class PlaybackController: UIViewController {
             let vc = segue.destination as? ShareVideoController
             vc?.videoURL = self.videoURL
             vc?.saved = self.saved
+            vc?.json = self.json
         }
     }
     

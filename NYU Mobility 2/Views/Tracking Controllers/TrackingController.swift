@@ -50,7 +50,7 @@ class TrackingController: UIViewController, AVCaptureFileOutputRecordingDelegate
     // Gyro Sensor
     private let motionManager: CMMotionManager = CMMotionManager()
     // Used to store all x, y, z values
-    private var gyroDict: [String: [Double]] = ["x": [], "y": [], "z": []]
+//    private var gyroDict: [String: [Double]] = ["x": [], "y": [], "z": []]
     
     // Pace trackers
     private var currPace: Double = 0.0
@@ -189,6 +189,7 @@ class TrackingController: UIViewController, AVCaptureFileOutputRecordingDelegate
             let vc = segue.destination as! PlaybackController
             vc.videoURL = outputURL
             vc.saved = saved
+            vc.json = generateJSON()
         }
     }
     
@@ -234,7 +235,7 @@ class TrackingController: UIViewController, AVCaptureFileOutputRecordingDelegate
             cameraButton.backgroundColor = UIColor.white
             movieOutput.stopRecording()
             stopTracking()
-            saveSession()
+//            saveSession()
             clearData()
         }
     }
@@ -292,7 +293,7 @@ class TrackingController: UIViewController, AVCaptureFileOutputRecordingDelegate
      */
     func startTracking() {
         locationManager.startUpdatingLocation()
-        startGyro()
+//        startGyro()
         startUpdating()
         saveData(currTime: Date(), significant: true)
     }
@@ -304,7 +305,7 @@ class TrackingController: UIViewController, AVCaptureFileOutputRecordingDelegate
     func stopTracking() {
         locationManager.stopUpdatingLocation()
         stopUpdating()
-        stopGyros()
+//        stopGyros()
         saveData(currTime: Date(), significant: true)
     }
     
@@ -374,12 +375,15 @@ class TrackingController: UIViewController, AVCaptureFileOutputRecordingDelegate
         
         // If the data collected is valid -> insert into the collection of points
         if (points.isEmpty || significant) {
+//            points.append(Point(dateToString(), steps, distance,
+//                                avgPace, currPace, currCad,
+//                                locationArray, gyroDict))
             points.append(Point(dateToString(), steps, distance,
                                 avgPace, currPace, currCad,
-                                locationArray, gyroDict))
+                                locationArray))
             
             // Clear the gyroscope data after getting its string representation
-            gyroDict.removeAll()
+//            gyroDict.removeAll()
             locationArray.removeAll()
         }
     }
@@ -395,15 +399,16 @@ class TrackingController: UIViewController, AVCaptureFileOutputRecordingDelegate
     }
     
     // Saves Point
-    func saveSession() {
-        let json: String = generateJSON()
-        DatabaseManager.shared.addSession(json: json, name: UserDefaults.standard.string(forKey: "name")!, startTime: dateToString(startTime),
-                                          videoURL: saved[0 ..< 36], completion: { success in
-            if (!success) {
-                print("Failed to save to database")
-            }
-        })
-    }
+//    func saveSession() {
+//        let json: String = generateJSON()
+//        DatabaseManager.shared.addSession(json: json, name: UserDefaults.standard.string(forKey: "name")!, startTime: dateToString(startTime),
+//                                          videoURL: saved[0 ..< 36], completion: { success in
+//            if (!success) {
+//                print("Failed to save to database")
+//            }
+//        })
+//
+//    }
     
     func clearData() {
         points.removeAll()
@@ -412,29 +417,29 @@ class TrackingController: UIViewController, AVCaptureFileOutputRecordingDelegate
     // Gyroscope Functions
     
     // Starts the gyroscope once it is confirmed to be available
-    func startGyro() {
-        if motionManager.isGyroAvailable {
-            // Set to update 5 times a second
-            self.motionManager.gyroUpdateInterval = 0.2
-            self.motionManager.startGyroUpdates(to: OperationQueue.current!) { (data, error) in
-                if let gyroData = data {
-                    if (self.gyroDict["x"] == nil) { // No entries for this point yet
-                        self.gyroDict["x"] = [gyroData.rotationRate.x]
-                        self.gyroDict["y"] = [gyroData.rotationRate.y]
-                        self.gyroDict["z"] = [gyroData.rotationRate.z]
-                    } else { // We know there are already values inserted
-                        self.gyroDict["x"]!.append(gyroData.rotationRate.x)
-                        self.gyroDict["y"]!.append(gyroData.rotationRate.y)
-                        self.gyroDict["z"]!.append(gyroData.rotationRate.z)
-                    }
-                    // Ex (output):
-                    // CMRotationRate(x: 0.6999756693840027,
-                    // y: -1.379577398300171, z: -0.3633846044540405)
-                }
-            }
-        }
-    }
-    
-    // Stops the gyroscope (assuming that it is available)
-    func stopGyros() { motionManager.stopGyroUpdates() }
+//    func startGyro() {
+//        if motionManager.isGyroAvailable {
+//            // Set to update 5 times a second
+//            self.motionManager.gyroUpdateInterval = 0.2
+//            self.motionManager.startGyroUpdates(to: OperationQueue.current!) { (data, error) in
+//                if let gyroData = data {
+//                    if (self.gyroDict["x"] == nil) { // No entries for this point yet
+//                        self.gyroDict["x"] = [gyroData.rotationRate.x]
+//                        self.gyroDict["y"] = [gyroData.rotationRate.y]
+//                        self.gyroDict["z"] = [gyroData.rotationRate.z]
+//                    } else { // We know there are already values inserted
+//                        self.gyroDict["x"]!.append(gyroData.rotationRate.x)
+//                        self.gyroDict["y"]!.append(gyroData.rotationRate.y)
+//                        self.gyroDict["z"]!.append(gyroData.rotationRate.z)
+//                    }
+//                    // Ex (output):
+//                    // CMRotationRate(x: 0.6999756693840027,
+//                    // y: -1.379577398300171, z: -0.3633846044540405)
+//                }
+//            }
+//        }
+//    }
+//
+//    // Stops the gyroscope (assuming that it is available)
+//    func stopGyros() { motionManager.stopGyroUpdates() }
 }
