@@ -176,9 +176,10 @@ class TrackingController: UIViewController, AVCaptureFileOutputRecordingDelegate
     // Gets the directory that the video is stored in
     func getPathDirectory() -> URL {
         // Searches a FileManager for paths and returns the first one
-        let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
-        let documentDirectory = paths[0]
-        return documentDirectory
+//        let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
+//        let documentDirectory = paths[0]
+//        return documentDirectory
+        return URL(fileURLWithPath: NSTemporaryDirectory(), isDirectory: true)
     }
 
     func generateURL() -> URL? {
