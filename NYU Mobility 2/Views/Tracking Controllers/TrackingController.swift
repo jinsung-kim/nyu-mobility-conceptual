@@ -363,7 +363,7 @@ class TrackingController: UIViewController, AVCaptureFileOutputRecordingDelegate
         Saves the given data into the stack, and clears out the gyroscope data to start taking values again
         - Parameters:
             - currTime: Date in which the data has been tracked
-            - significant: Whether the point must be included or not
+            - significant: Whether the point must be included or not (depreciated for testing model)
      */
     func saveData(currTime: Date, significant: Bool) {
         // JSON array implementation (See Point.swift for model)
@@ -376,18 +376,18 @@ class TrackingController: UIViewController, AVCaptureFileOutputRecordingDelegate
         prevDistance = temp
         
         // If the data collected is valid -> insert into the collection of points
-        if (points.isEmpty || significant) {
+//        if (points.isEmpty || significant) {
 //            points.append(Point(dateToString(), steps, distance,
 //                                avgPace, currPace, currCad,
 //                                locationArray, gyroDict))
-            points.append(Point(dateToString(), steps, distance,
-                                avgPace, currPace, currCad,
-                                locationArray))
+        points.append(Point(dateToString(), steps, distance,
+                            avgPace, currPace, currCad,
+                            locationArray))
             
             // Clear the gyroscope data after getting its string representation
 //            gyroDict.removeAll()
-            locationArray.removeAll()
-        }
+        locationArray.removeAll()
+//        }
     }
     
     // Generate JSON in String form
