@@ -15,7 +15,7 @@ class StartingController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        logoutButton()
+//        logoutButton()
         tutorialButton()
         createCircleView()
         

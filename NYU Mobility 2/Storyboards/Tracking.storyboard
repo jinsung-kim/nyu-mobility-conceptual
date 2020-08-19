@@ -48,6 +48,7 @@
                         <outlet property="camPreview" destination="eeZ-99-2Q6" id="Z2f-NO-HU6"/>
                         <outlet property="cameraButton" destination="xab-pv-rbV" id="rzD-ak-fQG"/>
                         <segue destination="6ce-fj-qlh" kind="show" identifier="ShowVideo" id="8ND-NC-P6E"/>
+                        <segue destination="2I1-UP-3BU" kind="show" identifier="ShareVideoTest" id="3Kq-4W-4Ar"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="l3Z-f1-45k" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -491,6 +492,9 @@
             <point key="canvasLocation" x="-200.00000000000003" y="113.83928571428571"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="3Kq-4W-4Ar"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="front-phone" width="1507" height="3126"/>
         <image name="oandmicon" width="820" height="816"/>

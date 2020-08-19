@@ -65,7 +65,7 @@ class TrackingController: UIViewController, AVCaptureFileOutputRecordingDelegate
         UIApplication.shared.isIdleTimerDisabled = true
         
         // Instructions Page Redirect setup
-        instructionButton()
+//        instructionButton()
         getLocationPermission()
         
         if (setupSession()) {
@@ -73,19 +73,6 @@ class TrackingController: UIViewController, AVCaptureFileOutputRecordingDelegate
             startSession()
         }
         setupButton()
-    }
-    
-    // Upper right item from the tracking controller that goes to the settings
-    func instructionButton() {
-        let instructionButton = UIBarButtonItem()
-        instructionButton.title = "See Tutorial"
-        instructionButton.action = #selector(sessionsTap)
-        instructionButton.target = self
-        navigationItem.rightBarButtonItem = instructionButton
-    }
-    
-    @objc func sessionsTap() {
-        performSegue(withIdentifier: "Tutorial", sender: self)
     }
     
     func setupButton() {
@@ -108,8 +95,8 @@ class TrackingController: UIViewController, AVCaptureFileOutputRecordingDelegate
     }
 
     func setupSession() -> Bool {
-        // Proof of concept: Lowering quality to 720p
-        captureSession.sessionPreset = AVCaptureSession.Preset.hd1280x720
+        // Proof of concept: Lowering quality
+        captureSession.sessionPreset = AVCaptureSession.Preset.medium
         let camera = AVCaptureDevice.default(for: AVMediaType.video)!
         
         do {
@@ -184,8 +171,13 @@ class TrackingController: UIViewController, AVCaptureFileOutputRecordingDelegate
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if (segue.identifier == "ShowVideo") {
+        if (segue.identifier == "ShareVideo") {
             let vc = segue.destination as! PlaybackController
+            vc.videoURL = outputURL
+            vc.saved = saved
+            vc.json = json
+        } else if (segue.identifier == "ShareVideoTest") {
+            let vc = segue.destination as! ShareVideoController
             vc.videoURL = outputURL
             vc.saved = saved
             vc.json = json
@@ -248,7 +240,7 @@ class TrackingController: UIViewController, AVCaptureFileOutputRecordingDelegate
         if (error != nil) {
             print("Error recording movie: \(error!.localizedDescription)")
         } else {
-            performSegue(withIdentifier: "ShowVideo", sender: outputURL!)
+            performSegue(withIdentifier: "ShareVideoTest", sender: outputURL!)
         }
     }
     

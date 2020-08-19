@@ -19,7 +19,7 @@ class ShareVideoController: UIViewController {
     var videoURL: URL!
     var saved: String!
     var json: String!
-  
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
