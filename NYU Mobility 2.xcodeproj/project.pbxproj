@@ -112,6 +112,7 @@
 				A16AB18D24E19D3300742AFF /* UI */,
 				A16AB18624E19AF000742AFF /* Models */,
 				A16AB18424E19ABD00742AFF /* Resources */,
+				A16AB18824E19B3100742AFF /* Storyboards */,
 				A16AB18324E19AB500742AFF /* Views */,
 				A16AB17D24E19A4800742AFF /* Info.plist */,
 				A1D9389924E9D32C008D4B7D /* GoogleService-Info.plist */,
@@ -124,7 +125,6 @@
 			children = (
 				A16AB19124E19EF400742AFF /* Tracking Controllers */,
 				A16AB19024E19EE000742AFF /* Registration Controllers */,
-				A16AB18824E19B3100742AFF /* Storyboards */,
 			);
 			path = Views;
 			sourceTree = "<group>";
