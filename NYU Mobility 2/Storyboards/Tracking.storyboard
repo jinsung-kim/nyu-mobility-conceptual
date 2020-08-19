@@ -47,7 +47,6 @@
                     <connections>
                         <outlet property="camPreview" destination="eeZ-99-2Q6" id="Z2f-NO-HU6"/>
                         <outlet property="cameraButton" destination="xab-pv-rbV" id="rzD-ak-fQG"/>
-                        <segue destination="0Vc-0b-ohc" kind="show" identifier="Tutorial" id="t3E-CO-zSL"/>
                         <segue destination="6ce-fj-qlh" kind="show" identifier="ShowVideo" id="8ND-NC-P6E"/>
                     </connections>
                 </viewController>
@@ -456,6 +455,7 @@
                         <outlet property="startButton" destination="VX4-Dg-VUw" id="N3w-I2-9Cc"/>
                         <segue destination="8gM-aV-C7i" kind="show" identifier="Started" id="ubV-JC-ERn"/>
                         <segue destination="OCT-no-DgO" kind="show" identifier="Logout" id="GEl-L7-l6B"/>
+                        <segue destination="0Vc-0b-ohc" kind="show" identifier="Tutorial" id="PN2-9I-b1F"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hPF-JW-zMb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

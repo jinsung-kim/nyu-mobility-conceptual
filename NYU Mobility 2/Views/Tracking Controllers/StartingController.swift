@@ -16,12 +16,14 @@ class StartingController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         logoutButton()
+        tutorialButton()
         createCircleView()
         
-        // Hide back button -> Since logout button will handle that case
-        navigationItem.leftBarButtonItem = nil
+        // Hide back button -> Since logout button will be there
         navigationItem.hidesBackButton = true
     }
+    
+    @IBAction func unwindToRecorder(_ sender: UIStoryboardSegue) {}
     
     // Set logout button
     func logoutButton() {
@@ -29,7 +31,7 @@ class StartingController: UIViewController {
         instructionButton.title = "Logout"
         instructionButton.action = #selector(logoutTap)
         instructionButton.target = self
-        navigationItem.rightBarButtonItem = instructionButton
+        navigationItem.leftBarButtonItem = instructionButton
     }
     
     @objc func logoutTap() {
@@ -37,6 +39,18 @@ class StartingController: UIViewController {
         save("email", "")
         save("password", "")
         performSegue(withIdentifier: "Logout", sender: self)
+    }
+    
+    func tutorialButton() {
+        let tutorialButton = UIBarButtonItem()
+        tutorialButton.title = "See Tutorial"
+        tutorialButton.action = #selector(tutorialTap)
+        tutorialButton.target = self
+        navigationItem.rightBarButtonItem = tutorialButton
+    }
+    
+    @objc func tutorialTap() {
+        performSegue(withIdentifier: "Tutorial", sender: self)
     }
     
     func createCircleView() {
