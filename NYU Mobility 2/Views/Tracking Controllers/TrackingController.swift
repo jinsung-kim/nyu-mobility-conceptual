@@ -365,6 +365,16 @@ class TrackingController: UIViewController, AVCaptureFileOutputRecordingDelegate
         distance = distance - prevDistance
         prevDistance = temp
         
+        // These cases happen when the session has ended
+        // Essentially, the last session value points will include the total for the session
+        if (distance < 0) {
+            distance = distance * -1
+        }
+        
+        if (steps < 0) {
+            steps = steps * -1
+        }
+        
         // If the data collected is valid -> insert into the collection of points
 //        if (points.isEmpty || significant) {
 //            points.append(Point(dateToString(), steps, distance,
