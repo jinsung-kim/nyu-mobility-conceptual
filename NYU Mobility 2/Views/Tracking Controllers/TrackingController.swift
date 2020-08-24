@@ -14,8 +14,10 @@ import CoreMotion
 
 class TrackingController: UIViewController, AVCaptureFileOutputRecordingDelegate, CLLocationManagerDelegate {
     
+    // The playback as the recording is being made
     @IBOutlet weak var camPreview: UIView!
     
+    // Circle button that is pressed on
     @IBOutlet weak var cameraButton: UIView!
     
     let captureSession = AVCaptureSession()
