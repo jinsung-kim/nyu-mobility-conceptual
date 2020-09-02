@@ -1,4 +1,5 @@
 platform :ios, '11.0'
+install! 'cocoapods', :generate_multiple_pod_projects => false, :incremental_installation => false
 
 target 'NYU Mobility 2' do
   # Comment the next line if you don't want to use dynamic frameworks
@@ -8,10 +9,10 @@ target 'NYU Mobility 2' do
     pod 'LayoutHelper'
     pod "Device", '~> 3.2.1'
     pod 'SwiftyJSON', '~> 4.0'
-    pod 'Firebase/Core'
-    pod 'Firebase/Database'
-    pod 'Firebase/Storage'
-    pod 'Firebase/Auth'
-    pod 'JGProgressHUD'
+#    pod 'Firebase/Core'
+#    pod 'Firebase/Database'
+#    pod 'Firebase/Storage'
+#    pod 'Firebase/Auth'
+#    pod 'JGProgressHUD'
 
 end

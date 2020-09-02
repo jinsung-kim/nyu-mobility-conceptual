@@ -8,13 +8,14 @@
 
 import UIKit
 import Photos
-import Firebase
-import FirebaseStorage
-import JGProgressHUD
+//import Firebase
+//import FirebaseStorage
+//import JGProgressHUD
+//import SafariServices
 
 class ShareVideoController: UIViewController {
     
-    private let spinner = JGProgressHUD(style: .dark)
+//    private let spinner = JGProgressHUD(style: .dark)
     
     var videoURL: URL!
     var saved: String!
@@ -24,23 +25,23 @@ class ShareVideoController: UIViewController {
         super.viewDidLoad()
     }
     
-    func uploadVideo() {
-        spinner.show(in: view)
-        let storageRef = Storage.storage().reference()
-        let videoRef = storageRef.child(saved[0 ..< 36])
-        _ = videoRef.putFile(from: videoURL!, metadata: nil, completion: {
-            (metadata, error) in
-            guard metadata != nil else {
-                self.alertUserSaveError(message: "The video could not be saved to the database")
-                return
-            }
-            DispatchQueue.main.async {
-                self.spinner.dismiss()
-            }
-            print("Video uploaded")
-            self.successMessage()
-        })
-    }
+//    func uploadVideo() {
+//        spinner.show(in: view)
+//        let storageRef = Storage.storage().reference()
+//        let videoRef = storageRef.child(saved[0 ..< 36])
+//        _ = videoRef.putFile(from: videoURL!, metadata: nil, completion: {
+//            (metadata, error) in
+//            guard metadata != nil else {
+//                self.alertUserSaveError(message: "The video could not be saved to the database")
+//                return
+//            }
+//            DispatchQueue.main.async {
+//                self.spinner.dismiss()
+//            }
+//            print("Video uploaded")
+//            self.successMessage()
+//        })
+//    }
     
     /**
         Sends a request to the device to save the video to the camera
@@ -90,8 +91,14 @@ class ShareVideoController: UIViewController {
         }
 //        uploadVideo()
         writeJSONFile()
-        
+//        redirectToForm()
     }
+    
+//    func redirectToForm() {
+//        let url = URL(string: "https://file-uploader-mobility.herokuapp.com/")!
+//        let svc = SFSafariViewController(url: url)
+//        present(svc, animated: true, completion: nil)
+//    }
     
     func writeJSONFile() {
         let file = "\(saved[0 ..< 36]).json"
