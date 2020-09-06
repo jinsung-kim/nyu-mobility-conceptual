@@ -101,7 +101,7 @@ class ShareVideoController: UIViewController {
 //    }
     
     func writeJSONFile() {
-        let file = "\(saved[0 ..< 36]).json"
+        let file = "\(String(describing: saved)).json"
         let content = json
         
         let directory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!

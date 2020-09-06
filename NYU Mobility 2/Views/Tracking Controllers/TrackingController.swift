@@ -167,9 +167,22 @@ class TrackingController: UIViewController, AVCaptureFileOutputRecordingDelegate
     }
 
     func generateURL() -> URL? {
-        saved = NSUUID().uuidString + ".mp4"
+        saved = safeTagGenerator() + ".mp4"
         let path = getPathDirectory().appendingPathComponent(saved)
         return path
+    }
+    
+    /**
+        Generates the tag for the video and matching JSON file
+        Using the format: yyyy-MM-dd-hh-mm-ss-UUID(first 8 characters)
+        Ex: 2020-09-04-12-23-43-EX9S02EZ -> Used in generate URL for .mp4 and .json
+     */
+    func safeTagGenerator() -> String {
+        var res: String = ""
+        let df = DateFormatter()
+        df.dateFormat = "yyyy-MM-dd-hh-mm-ss-\(UUID().uuidString[0 ... 7])"
+        res = df.string(from: startTime)
+        return res
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
