@@ -167,8 +167,8 @@ class TrackingController: UIViewController, AVCaptureFileOutputRecordingDelegate
     }
 
     func generateURL() -> URL? {
-        saved = safeTagGenerator() + ".mp4"
-        let path = getPathDirectory().appendingPathComponent(saved)
+        saved = safeTagGenerator()
+        let path = getPathDirectory().appendingPathComponent(saved + ".mp4")
         return path
     }
     
