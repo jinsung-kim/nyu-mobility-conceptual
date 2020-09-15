@@ -174,14 +174,20 @@ class TrackingController: UIViewController, AVCaptureFileOutputRecordingDelegate
     
     /**
         Generates the tag for the video and matching JSON file
-        Using the format: yyyy-MM-dd-hh-mm-ss-UUID(first 8 characters)
+        Using the format: yyyy-MM-dd-hh-mm-ss
         Ex: 2020-09-04-12-23-43-EX9S02EZ -> Used in generate URL for .mp4 and .json
      */
     func safeTagGenerator() -> String {
         var res: String = ""
         let df = DateFormatter()
-        df.dateFormat = "yyyy-MM-dd-hh-mm-ss-\(UUID().uuidString[0 ... 7])"
+        // Unique device ID, reset when UserDefaults are cleared
+        df.dateFormat = "yyyy-MM-dd-hh-mm-ss"
         res = df.string(from: startTime)
+        var unique: String = "NULL-VAL"
+        if let uuid = UIDevice.current.identifierForVendor?.uuidString {
+            unique = uuid[0 ... 7]
+        }
+        res = res + "-" + unique
         return res
     }
     
