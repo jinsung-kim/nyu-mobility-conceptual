@@ -7,10 +7,8 @@
 //
 
 import UIKit
-import Device
-//import FirebaseDatabase
-//import FirebaseAuth
-//import JGProgressHUD
+//import Device
+
 
 class AddUserController: UIViewController {
     

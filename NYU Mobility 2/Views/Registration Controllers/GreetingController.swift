@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import Device
+//import Device
 //import FirebaseAuth
 //import FirebaseDatabase
 //import JGProgressHUD
