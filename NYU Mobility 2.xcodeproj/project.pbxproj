@@ -12,9 +12,7 @@
 		A16AB17724E19A4700742AFF /* NYU_Mobility_2.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A16AB17524E19A4700742AFF /* NYU_Mobility_2.xcdatamodeld */; };
 		A16AB17924E19A4800742AFF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A16AB17824E19A4800742AFF /* Assets.xcassets */; };
 		A16AB17C24E19A4800742AFF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A16AB17A24E19A4800742AFF /* LaunchScreen.storyboard */; };
-		A16AB18A24E19C1400742AFF /* Registration.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A16AB18924E19C1400742AFF /* Registration.storyboard */; };
 		A16AB18F24E19D4100742AFF /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = A16AB18E24E19D4100742AFF /* Colors.swift */; };
-		A16AB19324E19F3B00742AFF /* GreetingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A16AB19224E19F3B00742AFF /* GreetingController.swift */; };
 		A16AB19524E1A28000742AFF /* Tracking.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A16AB19424E1A28000742AFF /* Tracking.storyboard */; };
 		A17DEB2524E1B5EA0026F3F9 /* BubbleTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = A17DEB2424E1B5EA0026F3F9 /* BubbleTextField.swift */; };
 		A17DEB2724E1B5FA0026F3F9 /* BubbleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A17DEB2624E1B5FA0026F3F9 /* BubbleButton.swift */; };
@@ -24,7 +22,6 @@
 		A17DEB3124E1DD6C0026F3F9 /* PlaybackController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A17DEB3024E1DD6C0026F3F9 /* PlaybackController.swift */; };
 		A17DEB3424E1E56A0026F3F9 /* String+Indexing.swift in Sources */ = {isa = PBXBuildFile; fileRef = A17DEB3324E1E56A0026F3F9 /* String+Indexing.swift */; };
 		A17DEB3624E1E6A80026F3F9 /* ShareVideoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A17DEB3524E1E6A80026F3F9 /* ShareVideoController.swift */; };
-		A17DEB3824E229500026F3F9 /* AddUserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A17DEB3724E229500026F3F9 /* AddUserController.swift */; };
 		A1A9C5FA24EB2CC1000C2C42 /* StartingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A9C5F924EB2CC1000C2C42 /* StartingController.swift */; };
 		A1D9389A24E9D32C008D4B7D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A1D9389924E9D32C008D4B7D /* GoogleService-Info.plist */; };
 		E88A02C01A2142CB7595762A /* Pods_NYU_Mobility_2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD5F394082FE5633924CD555 /* Pods_NYU_Mobility_2.framework */; };
@@ -39,9 +36,7 @@
 		A16AB17824E19A4800742AFF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A16AB17B24E19A4800742AFF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A16AB17D24E19A4800742AFF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A16AB18924E19C1400742AFF /* Registration.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Registration.storyboard; sourceTree = "<group>"; };
 		A16AB18E24E19D4100742AFF /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
-		A16AB19224E19F3B00742AFF /* GreetingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GreetingController.swift; sourceTree = "<group>"; };
 		A16AB19424E1A28000742AFF /* Tracking.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Tracking.storyboard; sourceTree = "<group>"; };
 		A17DEB2424E1B5EA0026F3F9 /* BubbleTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BubbleTextField.swift; sourceTree = "<group>"; };
 		A17DEB2624E1B5FA0026F3F9 /* BubbleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BubbleButton.swift; sourceTree = "<group>"; };
@@ -51,7 +46,6 @@
 		A17DEB3024E1DD6C0026F3F9 /* PlaybackController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaybackController.swift; sourceTree = "<group>"; };
 		A17DEB3324E1E56A0026F3F9 /* String+Indexing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Indexing.swift"; sourceTree = "<group>"; };
 		A17DEB3524E1E6A80026F3F9 /* ShareVideoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareVideoController.swift; sourceTree = "<group>"; };
-		A17DEB3724E229500026F3F9 /* AddUserController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddUserController.swift; sourceTree = "<group>"; };
 		A1A9C5F924EB2CC1000C2C42 /* StartingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartingController.swift; sourceTree = "<group>"; };
 		A1D9389924E9D32C008D4B7D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		AD5F394082FE5633924CD555 /* Pods_NYU_Mobility_2.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NYU_Mobility_2.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -124,7 +118,6 @@
 			isa = PBXGroup;
 			children = (
 				A16AB19124E19EF400742AFF /* Tracking Controllers */,
-				A16AB19024E19EE000742AFF /* Registration Controllers */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -153,7 +146,6 @@
 			isa = PBXGroup;
 			children = (
 				A16AB17A24E19A4800742AFF /* LaunchScreen.storyboard */,
-				A16AB18924E19C1400742AFF /* Registration.storyboard */,
 				A16AB19424E1A28000742AFF /* Tracking.storyboard */,
 			);
 			path = Storyboards;
@@ -167,15 +159,6 @@
 				A17DEB2624E1B5FA0026F3F9 /* BubbleButton.swift */,
 			);
 			path = UI;
-			sourceTree = "<group>";
-		};
-		A16AB19024E19EE000742AFF /* Registration Controllers */ = {
-			isa = PBXGroup;
-			children = (
-				A16AB19224E19F3B00742AFF /* GreetingController.swift */,
-				A17DEB3724E229500026F3F9 /* AddUserController.swift */,
-			);
-			path = "Registration Controllers";
 			sourceTree = "<group>";
 		};
 		A16AB19124E19EF400742AFF /* Tracking Controllers */ = {
@@ -260,7 +243,6 @@
 				A16AB17C24E19A4800742AFF /* LaunchScreen.storyboard in Resources */,
 				A16AB19524E1A28000742AFF /* Tracking.storyboard in Resources */,
 				A1D9389A24E9D32C008D4B7D /* GoogleService-Info.plist in Resources */,
-				A16AB18A24E19C1400742AFF /* Registration.storyboard in Resources */,
 				A16AB17924E19A4800742AFF /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -316,7 +298,6 @@
 			files = (
 				A17DEB3624E1E6A80026F3F9 /* ShareVideoController.swift in Sources */,
 				A16AB17724E19A4700742AFF /* NYU_Mobility_2.xcdatamodeld in Sources */,
-				A17DEB3824E229500026F3F9 /* AddUserController.swift in Sources */,
 				A17DEB2524E1B5EA0026F3F9 /* BubbleTextField.swift in Sources */,
 				A17DEB2D24E1CA7B0026F3F9 /* DatabaseManager.swift in Sources */,
 				A17DEB2924E1C5C60026F3F9 /* TrackingController.swift in Sources */,
@@ -326,7 +307,6 @@
 				A17DEB2B24E1CA3C0026F3F9 /* Point.swift in Sources */,
 				A17DEB3424E1E56A0026F3F9 /* String+Indexing.swift in Sources */,
 				A17DEB2724E1B5FA0026F3F9 /* BubbleButton.swift in Sources */,
-				A16AB19324E19F3B00742AFF /* GreetingController.swift in Sources */,
 				A16AB16F24E19A4700742AFF /* SceneDelegate.swift in Sources */,
 				A1A9C5FA24EB2CC1000C2C42 /* StartingController.swift in Sources */,
 			);

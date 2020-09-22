@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="2pH-mL-Xmc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="2pH-mL-Xmc">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -17,18 +19,19 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eeZ-99-2Q6">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xab-pv-rbV">
                                 <rect key="frame" x="177" y="742" width="60" height="60"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="Ibj-bz-Ohb"/>
                                     <constraint firstAttribute="width" constant="60" id="e3F-yP-Q9q"/>
                                 </constraints>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="XTR-n8-Xs0"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="xab-pv-rbV" firstAttribute="centerX" secondItem="acx-EW-S8N" secondAttribute="centerX" id="0mr-D1-q6b"/>
                             <constraint firstItem="eeZ-99-2Q6" firstAttribute="centerX" secondItem="acx-EW-S8N" secondAttribute="centerX" id="1cn-JK-6as"/>
@@ -41,7 +44,6 @@
                             <constraint firstItem="eeZ-99-2Q6" firstAttribute="centerY" secondItem="acx-EW-S8N" secondAttribute="centerY" id="vjo-kj-OGX"/>
                             <constraint firstAttribute="bottom" secondItem="eeZ-99-2Q6" secondAttribute="bottom" id="x1R-YT-xrh"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="XTR-n8-Xs0"/>
                     </view>
                     <navigationItem key="navigationItem" title="Record Session" id="6h2-18-nT4"/>
                     <connections>
@@ -65,10 +67,11 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="h7E-cM-WUz">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="6qC-MA-Bry"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="h7E-cM-WUz" firstAttribute="centerY" secondItem="yIU-MO-92x" secondAttribute="centerY" id="37R-89-bl7"/>
                             <constraint firstAttribute="bottom" secondItem="h7E-cM-WUz" secondAttribute="bottom" id="8jy-bf-Onn"/>
@@ -77,7 +80,6 @@
                             <constraint firstItem="h7E-cM-WUz" firstAttribute="centerX" secondItem="yIU-MO-92x" secondAttribute="centerX" id="khE-7i-CMn"/>
                             <constraint firstItem="h7E-cM-WUz" firstAttribute="top" secondItem="yIU-MO-92x" secondAttribute="top" id="rZH-Rf-XPt"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="6qC-MA-Bry"/>
                     </view>
                     <navigationItem key="navigationItem" id="oX8-uZ-aJg"/>
                     <connections>
@@ -105,12 +107,12 @@
                                 </connections>
                             </button>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="skx-yN-dbq"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="wGq-z3-SLs" firstAttribute="centerY" secondItem="Nv1-jP-J0H" secondAttribute="centerY" id="7Bz-Hn-eb1"/>
                             <constraint firstItem="wGq-z3-SLs" firstAttribute="centerX" secondItem="Nv1-jP-J0H" secondAttribute="centerX" id="Lg2-gg-X6M"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="skx-yN-dbq"/>
                     </view>
                     <navigationItem key="navigationItem" title="Share Video" id="YPQ-3F-Bff"/>
                 </viewController>
@@ -126,7 +128,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VVg-RM-RJK" customClass="BubbleButton" customModule="NYU_Mobility_2" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VVg-RM-RJK" customClass="BubbleButton" customModule="NYU_Mobility_2" customModuleProvider="target">
                                 <rect key="frame" x="132" y="772" width="150" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="150" id="4kE-Z5-85A"/>
@@ -154,6 +156,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="ITJ-51-7ie"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="VVg-RM-RJK" firstAttribute="centerX" secondItem="RsJ-Ox-2Ni" secondAttribute="centerX" id="4Qm-Ty-EFH"/>
@@ -205,7 +208,6 @@
                             </constraint>
                             <constraint firstItem="ITJ-51-7ie" firstAttribute="bottom" secondItem="VVg-RM-RJK" secondAttribute="bottom" constant="40" id="l1Z-IN-Klb"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="ITJ-51-7ie"/>
                     </view>
                     <navigationItem key="navigationItem" id="vda-1o-aGe"/>
                 </viewController>
@@ -237,7 +239,7 @@
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="55v-ov-R4K" customClass="BubbleButton" customModule="NYU_Mobility_2" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="55v-ov-R4K" customClass="BubbleButton" customModule="NYU_Mobility_2" customModuleProvider="target">
                                 <rect key="frame" x="132" y="772" width="150" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="150" id="Tfj-7t-FRE"/>
@@ -249,6 +251,7 @@
                                 </connections>
                             </button>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="FMx-rL-wmz"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="2Fj-ct-mor" firstAttribute="centerX" secondItem="vhg-PM-zss" secondAttribute="centerX" id="8FQ-Pj-wT2"/>
@@ -300,7 +303,6 @@
                                 </userDefinedRuntimeAttributes>
                             </constraint>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="FMx-rL-wmz"/>
                     </view>
                     <navigationItem key="navigationItem" id="eam-fQ-2eL"/>
                 </viewController>
@@ -316,7 +318,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0ec-3L-p4K" customClass="BubbleButton" customModule="NYU_Mobility_2" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0ec-3L-p4K" customClass="BubbleButton" customModule="NYU_Mobility_2" customModuleProvider="target">
                                 <rect key="frame" x="132" y="772" width="150" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="150" id="BvI-ba-lOM"/>
@@ -341,6 +343,7 @@
                                 </constraints>
                             </imageView>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="jEb-ZY-wLb"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="0ec-3L-p4K" firstAttribute="top" secondItem="81J-jz-DyL" secondAttribute="bottom" constant="30" id="1qI-7X-Jjw" customClass="NSLayoutHelper" customModule="LayoutHelper">
@@ -394,7 +397,6 @@
                             </constraint>
                             <constraint firstItem="MZh-A7-b9b" firstAttribute="centerX" secondItem="0Gt-q5-pde" secondAttribute="centerX" id="ox6-KZ-xbi"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="jEb-ZY-wLb"/>
                     </view>
                     <navigationItem key="navigationItem" id="pKm-Jv-chW"/>
                 </viewController>
@@ -426,7 +428,7 @@
                                     <constraint firstAttribute="width" constant="128" id="o4O-tK-Lrs"/>
                                 </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VX4-Dg-VUw">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VX4-Dg-VUw">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
                                 <state key="normal" title="Start">
@@ -437,6 +439,7 @@
                                 </connections>
                             </button>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="EDa-vL-ntt"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="EDa-vL-ntt" firstAttribute="bottom" secondItem="dD8-jO-5Jd" secondAttribute="bottom" constant="20" id="BNh-W2-LqU"/>
@@ -448,30 +451,18 @@
                             <constraint firstItem="VX4-Dg-VUw" firstAttribute="top" secondItem="ybA-Vp-6Ao" secondAttribute="top" id="oF1-CX-NIM"/>
                             <constraint firstAttribute="bottom" secondItem="VX4-Dg-VUw" secondAttribute="bottom" id="xbs-ZJ-nBt"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="EDa-vL-ntt"/>
                     </view>
                     <navigationItem key="navigationItem" title="Get Started" id="bBp-Tz-46z"/>
                     <connections>
                         <outlet property="circleView" destination="Yny-sB-Fza" id="8WE-qg-9Tp"/>
                         <outlet property="startButton" destination="VX4-Dg-VUw" id="N3w-I2-9Cc"/>
                         <segue destination="8gM-aV-C7i" kind="show" identifier="Started" id="ubV-JC-ERn"/>
-                        <segue destination="OCT-no-DgO" kind="show" identifier="Logout" id="GEl-L7-l6B"/>
                         <segue destination="0Vc-0b-ohc" kind="show" identifier="Tutorial" id="PN2-9I-b1F"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hPF-JW-zMb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="792.75362318840587" y="113.83928571428571"/>
-        </scene>
-        <!--LoginView-->
-        <scene sceneID="deq-kq-So3">
-            <objects>
-                <viewControllerPlaceholder storyboardName="Registration" referencedIdentifier="LoginView" id="OCT-no-DgO" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" id="g33-m6-ut8"/>
-                </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="3h8-Go-4Cc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="793" y="690"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="lln-qE-Fyn">
@@ -500,5 +491,8 @@
         <image name="oandmicon" width="820" height="816"/>
         <image name="share" width="304" height="394"/>
         <image name="wearing" width="2922" height="2276"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
     </resources>
 </document>
