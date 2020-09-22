@@ -67,7 +67,6 @@ class TrackingController: UIViewController, AVCaptureFileOutputRecordingDelegate
         UIApplication.shared.isIdleTimerDisabled = true
         
         // Instructions Page Redirect setup
-//        instructionButton()
         getLocationPermission()
         
         if (setupSession()) {
@@ -172,22 +171,25 @@ class TrackingController: UIViewController, AVCaptureFileOutputRecordingDelegate
         return path
     }
     
+    func getSafeEmail() -> String{
+        let email: String = UserDefaults.standard.string(forKey: "email")!
+        return email.replacingOccurrences(of: "@", with: "-")
+                    .replacingOccurrences(of: ".", with: "-")
+    }
+    
     /**
         Generates the tag for the video and matching JSON file
         Using the format: yyyy-MM-dd-hh-mm-ss
-        Ex: 2020-09-04-12-23-43-EX9S02EZ -> Used in generate URL for .mp4 and .json
+        Ex: 2020-09-04-12-23-43-jinkim-nyu-edu -> Used in generate URL for .mp4 and .json
      */
     func safeTagGenerator() -> String {
         var res: String = ""
         let df = DateFormatter()
-        // Unique device ID, reset when UserDefaults are cleared
         df.dateFormat = "yyyy-MM-dd-hh-mm-ss"
         res = df.string(from: startTime)
-        var unique: String = "NULL-VAL"
-        if let uuid = UIDevice.current.identifierForVendor?.uuidString {
-            unique = uuid[0 ... 7]
-        }
-        res = res + "-" + unique
+        // Safe value
+        let email: String = getSafeEmail()
+        res = res + "-" + email
         return res
     }
     
@@ -247,7 +249,6 @@ class TrackingController: UIViewController, AVCaptureFileOutputRecordingDelegate
             cameraButton.backgroundColor = UIColor.white
             movieOutput.stopRecording()
             stopTracking()
-//            saveSession()
             clearData()
         }
     }
@@ -396,11 +397,6 @@ class TrackingController: UIViewController, AVCaptureFileOutputRecordingDelegate
             steps = steps * -1
         }
         
-        // If the data collected is valid -> insert into the collection of points
-//        if (points.isEmpty || significant) {
-//            points.append(Point(dateToString(), steps, distance,
-//                                avgPace, currPace, currCad,
-//                                locationArray, gyroDict))
         points.append(Point(dateToString(), steps, distance,
                             avgPace, currPace, currCad,
                             locationArray))
@@ -420,49 +416,8 @@ class TrackingController: UIViewController, AVCaptureFileOutputRecordingDelegate
         }
         return "There was an error generating the JSON file" // shouldn't ever happen
     }
-    
-    // Saves Point
-//    func saveSession() {
-//        let json: String = generateJSON()
-//        DatabaseManager.shared.addSession(json: json, name: UserDefaults.standard.string(forKey: "name")!, startTime: dateToString(startTime),
-//                                          videoURL: saved[0 ..< 36], completion: { success in
-//            if (!success) {
-//                print("Failed to save to database")
-//            }
-//        })
-//
-//    }
-    
+
     func clearData() {
         points.removeAll()
     }
-    
-    // Gyroscope Functions
-    
-    // Starts the gyroscope once it is confirmed to be available
-//    func startGyro() {
-//        if motionManager.isGyroAvailable {
-//            // Set to update 5 times a second
-//            self.motionManager.gyroUpdateInterval = 0.2
-//            self.motionManager.startGyroUpdates(to: OperationQueue.current!) { (data, error) in
-//                if let gyroData = data {
-//                    if (self.gyroDict["x"] == nil) { // No entries for this point yet
-//                        self.gyroDict["x"] = [gyroData.rotationRate.x]
-//                        self.gyroDict["y"] = [gyroData.rotationRate.y]
-//                        self.gyroDict["z"] = [gyroData.rotationRate.z]
-//                    } else { // We know there are already values inserted
-//                        self.gyroDict["x"]!.append(gyroData.rotationRate.x)
-//                        self.gyroDict["y"]!.append(gyroData.rotationRate.y)
-//                        self.gyroDict["z"]!.append(gyroData.rotationRate.z)
-//                    }
-//                    // Ex (output):
-//                    // CMRotationRate(x: 0.6999756693840027,
-//                    // y: -1.379577398300171, z: -0.3633846044540405)
-//                }
-//            }
-//        }
-//    }
-//
-//    // Stops the gyroscope (assuming that it is available)
-//    func stopGyros() { motionManager.stopGyroUpdates() }
 }

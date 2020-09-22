@@ -121,18 +121,26 @@ class ShareVideoController: UIViewController {
         // New Excluded Activities Code
         if #available(iOS 9.0, *) {
             activityVC.excludedActivityTypes = [UIActivity.ActivityType.addToReadingList,
-                                                UIActivity.ActivityType.assignToContact, UIActivity.ActivityType.copyToPasteboard,
-                                                UIActivity.ActivityType.mail, UIActivity.ActivityType.message,
-                                                UIActivity.ActivityType.openInIBooks, UIActivity.ActivityType.postToTencentWeibo,
-                                                UIActivity.ActivityType.postToVimeo, UIActivity.ActivityType.postToWeibo,
+                                                UIActivity.ActivityType.assignToContact,
+                                                UIActivity.ActivityType.copyToPasteboard,
+                                                UIActivity.ActivityType.mail,
+                                                UIActivity.ActivityType.message,
+                                                UIActivity.ActivityType.openInIBooks,
+                                                UIActivity.ActivityType.postToTencentWeibo,
+                                                UIActivity.ActivityType.postToVimeo,
+                                                UIActivity.ActivityType.postToWeibo,
                                                 UIActivity.ActivityType.print]
         // Fallback on earlier versions
         } else {
             activityVC.excludedActivityTypes = [UIActivity.ActivityType.addToReadingList,
-                                                UIActivity.ActivityType.assignToContact, UIActivity.ActivityType.copyToPasteboard,
-                                                UIActivity.ActivityType.mail, UIActivity.ActivityType.message,
-                                                UIActivity.ActivityType.postToTencentWeibo, UIActivity.ActivityType.postToVimeo,
-                                                UIActivity.ActivityType.postToWeibo, UIActivity.ActivityType.print]
+                                                UIActivity.ActivityType.assignToContact,
+                                                UIActivity.ActivityType.copyToPasteboard,
+                                                UIActivity.ActivityType.mail,
+                                                UIActivity.ActivityType.message,
+                                                UIActivity.ActivityType.postToTencentWeibo,
+                                                UIActivity.ActivityType.postToVimeo,
+                                                UIActivity.ActivityType.postToWeibo,
+                                                UIActivity.ActivityType.print]
         }
         present(activityVC, animated: true, completion: nil)
     }

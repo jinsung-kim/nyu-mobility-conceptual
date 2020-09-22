@@ -15,31 +15,27 @@ class StartingController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        logoutButton()
         tutorialButton()
         createCircleView()
+        
+        // Ask email if there isn't already an email entered
+        if (UserDefaults.standard.string(forKey: "email")! == "") {
+            showInputDialog(title: "Enter your email",
+                            subtitle: "Your email is needed to label files",
+                            actionTitle: "Add",
+                            cancelTitle: "Cancel",
+                            inputPlaceholder: "Ex: test@gmail.com",
+                            inputKeyboardType: .emailAddress, actionHandler:
+                                { (input: String?) in
+                                    self.save("email", input ?? "")
+                                })
+        }
         
         // Hide back button -> Since logout button will be there
         navigationItem.hidesBackButton = true
     }
     
     @IBAction func unwindToRecorder(_ sender: UIStoryboardSegue) {}
-    
-    // Set logout button
-    func logoutButton() {
-        let instructionButton = UIBarButtonItem()
-        instructionButton.title = "Logout"
-        instructionButton.action = #selector(logoutTap)
-        instructionButton.target = self
-        navigationItem.leftBarButtonItem = instructionButton
-    }
-    
-    @objc func logoutTap() {
-        save("name", "")
-        save("email", "")
-        save("password", "")
-        performSegue(withIdentifier: "Logout", sender: self)
-    }
     
     func tutorialButton() {
         let tutorialButton = UIBarButtonItem()
@@ -59,11 +55,51 @@ class StartingController: UIViewController {
     }
     
     @IBAction func startClicked(_ sender: Any) {
-        performSegue(withIdentifier: "Started", sender: self)
+        if (UserDefaults.standard.string(forKey: "email")! == "") {
+            showInputDialog(title: "Enter your email",
+                            subtitle: "Your email is needed to label files",
+                            actionTitle: "Add",
+                            cancelTitle: "Cancel",
+                            inputPlaceholder: "Ex: test@gmail.com",
+                            inputKeyboardType: .emailAddress, actionHandler:
+                                { (input: String?) in
+                                    self.save("email", input ?? "")
+                                })
+        } else { // if email is found -> tracking can be started
+            performSegue(withIdentifier: "Started", sender: self)
+        }
     }
     
     func save(_ key: String, _ value: String) {
         let defaults = UserDefaults.standard
         defaults.set(value, forKey: "\(key)")
+    }
+}
+
+extension UIViewController {
+    func showInputDialog(title: String? = nil,
+                         subtitle: String? = nil,
+                         actionTitle: String? = "Add",
+                         cancelTitle: String? = "Cancel",
+                         inputPlaceholder: String? = nil,
+                         inputKeyboardType: UIKeyboardType = UIKeyboardType.default,
+                         cancelHandler: ((UIAlertAction) -> Swift.Void)? = nil,
+                         actionHandler: ((_ text: String?) -> Void)? = nil) {
+
+        let alert = UIAlertController(title: title, message: subtitle, preferredStyle: .alert)
+        alert.addTextField { (textField:UITextField) in
+            textField.placeholder = inputPlaceholder
+            textField.keyboardType = inputKeyboardType
+        }
+        alert.addAction(UIAlertAction(title: actionTitle, style: .default, handler: { (action:UIAlertAction) in
+            guard let textField =  alert.textFields?.first else {
+                actionHandler?(nil)
+                return
+            }
+            actionHandler?(textField.text)
+        }))
+        alert.addAction(UIAlertAction(title: cancelTitle, style: .cancel, handler: cancelHandler))
+
+        self.present(alert, animated: true, completion: nil)
     }
 }

@@ -8,7 +8,6 @@
 
 import UIKit
 import CoreData
-//import FirebaseCore
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -17,8 +16,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
-//        FirebaseApp.configure()
-        
         // Won't turn off by itself
         application.isIdleTimerDisabled = true
         
@@ -26,11 +23,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let defaults = UserDefaults.standard
         /*
          VARIABLE USES:
-         name: Client / Specialist name
-         email: specialist's email - clients put their specialist's email to send data
-         password - to be hooked with database
+         email: used within the file name as identification
          */
-        let defaultValue = ["name": "", "email" : "", "password": ""] as [String : Any]
+        let defaultValue = ["email" : ""] as [String : Any]
         defaults.register(defaults: defaultValue)
         
         return true
