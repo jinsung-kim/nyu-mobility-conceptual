@@ -34,7 +34,9 @@ class TrackingController: UIViewController, AVCaptureFileOutputRecordingDelegate
     // Used to track pedometer when saving data
     private var steps: Int32 = 0
     private var prevSteps: Int32 = 0
+    private var totalSteps: Int32 = 0
     private var distance: Int32 = 0 // In meters
+    private var totalDistance: Int32 = 0
     private var prevDistance: Int32 = 0
     private var startTime: Date = Date()
     
@@ -390,16 +392,20 @@ class TrackingController: UIViewController, AVCaptureFileOutputRecordingDelegate
         // These cases happen when the session has ended
         // Essentially, the last session value points will include the total for the session
         if (distance < 0) {
-            distance = distance * -1
+            distance *= -1
+        } else {
+            totalDistance += distance
         }
         
         if (steps < 0) {
-            steps = steps * -1
+            steps *= -1
+        } else {
+            totalSteps += steps
         }
         
-        points.append(Point(dateToString(), steps, distance,
-                            avgPace, currPace, currCad,
-                            locationArray))
+        points.append(Point(dateToString(), totalSteps, steps,
+                            totalDistance, distance, avgPace, currPace,
+                            currCad, locationArray))
             
             // Clear the gyroscope data after getting its string representation
 //            gyroDict.removeAll()
