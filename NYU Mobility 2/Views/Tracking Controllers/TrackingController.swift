@@ -78,6 +78,7 @@ class TrackingController: UIViewController, AVCaptureFileOutputRecordingDelegate
         setupButton()
     }
     
+    /// Sets up the camera button used to start recording/stop recording
     func setupButton() {
         cameraButton.isUserInteractionEnabled = true
         let cameraButtonRecognizer = UITapGestureRecognizer(target: self, action: #selector(TrackingController.startCapture))
@@ -89,6 +90,7 @@ class TrackingController: UIViewController, AVCaptureFileOutputRecordingDelegate
         camPreview.addSubview(cameraButton)
     }
     
+    /// Sets up the camera view (which will start recording)
     func setupPreview() {
         // Configure previewLayer
         previewLayer = AVCaptureVideoPreviewLayer(session: captureSession)
@@ -97,9 +99,9 @@ class TrackingController: UIViewController, AVCaptureFileOutputRecordingDelegate
         camPreview.layer.addSublayer(previewLayer)
     }
 
+    /// Sets the quality of the video and adds camera as input
     func setupSession() -> Bool {
-        // Proof of concept: Lowering quality
-        captureSession.sessionPreset = AVCaptureSession.Preset.medium
+        captureSession.sessionPreset = AVCaptureSession.Preset.medium // Change this enum to higher/lower quality
         let camera = AVCaptureDevice.default(for: AVMediaType.video)!
         
         do {
@@ -122,6 +124,7 @@ class TrackingController: UIViewController, AVCaptureFileOutputRecordingDelegate
     
     func setupCaptureMode(_ mode: Int) {}
     
+    /// Starts recording session
     func startSession() {
         if (!captureSession.isRunning) {
             videoQueue().async {
@@ -130,6 +133,7 @@ class TrackingController: UIViewController, AVCaptureFileOutputRecordingDelegate
         }
     }
     
+    /// Stops recording session
     func stopSession() {
         if (captureSession.isRunning) {
             videoQueue().async {
@@ -142,23 +146,16 @@ class TrackingController: UIViewController, AVCaptureFileOutputRecordingDelegate
         return DispatchQueue.main
     }
     
+    /// Only allows portrait mode
     func currentVideoOrientation() -> AVCaptureVideoOrientation {
-        var orientation: AVCaptureVideoOrientation
-        
-        switch UIDevice.current.orientation {
-        case .portrait:
-            orientation = AVCaptureVideoOrientation.portrait
-        default:
-            orientation = AVCaptureVideoOrientation.portrait
-        }
-        return orientation
+        return AVCaptureVideoOrientation.portrait
     }
     
     @objc func startCapture() {
         startRecording()
     }
     
-    // Gets the directory that the video is stored in
+    /// Gets the directory that the video is stored in
     func getPathDirectory() -> URL {
         // Searches a FileManager for paths and returns the first one
 //        let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
@@ -173,6 +170,7 @@ class TrackingController: UIViewController, AVCaptureFileOutputRecordingDelegate
         return path
     }
     
+    /// Used to include the file name, since we want to avoid using . within the file name
     func getSafeEmail() -> String{
         let email: String = UserDefaults.standard.string(forKey: "email")!
         return email.replacingOccurrences(of: "@", with: "-")
@@ -195,13 +193,15 @@ class TrackingController: UIViewController, AVCaptureFileOutputRecordingDelegate
         return res
     }
     
+    /// Used to transfer data over to the share video
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Currently not being used (Playback)
         if (segue.identifier == "ShareVideo") {
             let vc = segue.destination as! PlaybackController
             vc.videoURL = outputURL
             vc.saved = saved
             vc.json = json
-        } else if (segue.identifier == "ShareVideoTest") {
+        } else if (segue.identifier == "ShareVideoTest") { // Sends to the screen to share
             let vc = segue.destination as! ShareVideoController
             vc.videoURL = outputURL
             vc.saved = saved
@@ -308,7 +308,6 @@ class TrackingController: UIViewController, AVCaptureFileOutputRecordingDelegate
      */
     func startTracking() {
         locationManager.startUpdatingLocation()
-//        startGyro()
         startUpdating()
         saveData(currTime: Date(), significant: true)
     }
@@ -320,7 +319,6 @@ class TrackingController: UIViewController, AVCaptureFileOutputRecordingDelegate
     func stopTracking() {
         locationManager.stopUpdatingLocation()
         stopUpdating()
-//        stopGyros()
         saveData(currTime: Date(), significant: true)
         json = generateJSON()
     }
@@ -406,11 +404,7 @@ class TrackingController: UIViewController, AVCaptureFileOutputRecordingDelegate
         points.append(Point(dateToString(), totalSteps, steps,
                             totalDistance, distance, avgPace, currPace,
                             currCad, locationArray))
-            
-            // Clear the gyroscope data after getting its string representation
-//            gyroDict.removeAll()
         locationArray.removeAll()
-//        }
     }
     
     // Generate JSON in String form
