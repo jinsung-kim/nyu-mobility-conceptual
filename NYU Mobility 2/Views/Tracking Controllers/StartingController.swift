@@ -21,7 +21,7 @@ class StartingController: UIViewController {
         // Ask email if there isn't already an email entered
         if (UserDefaults.standard.string(forKey: "email")! == "") {
             showInputDialog(title: "Enter your email",
-                            subtitle: "Your email is needed to label files",
+                            subtitle: "Your email is needed to label files (No emails will be sent to you or from you)",
                             actionTitle: "Add",
                             cancelTitle: "Cancel",
                             inputPlaceholder: "Ex: test@gmail.com",
@@ -57,7 +57,7 @@ class StartingController: UIViewController {
     @IBAction func startClicked(_ sender: Any) {
         if (UserDefaults.standard.string(forKey: "email")! == "") {
             showInputDialog(title: "Enter your email",
-                            subtitle: "Your email is needed to label files",
+                            subtitle: "Your email is needed to label files (No emails will be sent to you or from you)",
                             actionTitle: "Add",
                             cancelTitle: "Cancel",
                             inputPlaceholder: "Ex: test@gmail.com",
