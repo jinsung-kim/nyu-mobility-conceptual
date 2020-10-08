@@ -34,9 +34,7 @@ class TrackingController: UIViewController, AVCaptureFileOutputRecordingDelegate
     // Used to track pedometer when saving data
     private var steps: Int32 = 0
     private var prevSteps: Int32 = 0
-    private var totalSteps: Int32 = 0
     private var distance: Int32 = 0 // In meters
-    private var totalDistance: Int32 = 0
     private var prevDistance: Int32 = 0
     private var startTime: Date = Date()
     
@@ -391,20 +389,17 @@ class TrackingController: UIViewController, AVCaptureFileOutputRecordingDelegate
         // Essentially, the last session value points will include the total for the session
         if (distance < 0) {
             distance *= -1
-        } else {
-            totalDistance += distance
         }
         
         if (steps < 0) {
             steps *= -1
-        } else {
-            totalSteps += steps
         }
         
-        points.append(Point(dateToString(), totalSteps, steps,
-                            totalDistance, distance, avgPace, currPace,
+        points.append(Point(dateToString(), steps,
+                            distance, avgPace, currPace,
                             currCad, locationArray))
         locationArray.removeAll()
+        locationArray = ["long": [], "lat": []]
     }
     
     // Generate JSON in String form
